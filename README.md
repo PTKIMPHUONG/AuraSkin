@@ -1,17 +1,17 @@
 # AuraSkin
-# Đề tài: quản lý cửa hàng mỹ phẩm - Desktop app
+# Đề tài: Desktop app - quản lý cửa hàng mỹ phẩm 
 # Phạm vi đề tài: app dành cho nhân viên thu ngân bán hàng trực tiếp tại cửa hàng và nhân viên quản lý thống kê doanh thu của cửa hàng
 # Bảng phân công công việc:
-| **STT** | **Tên thành viên**    | **Nhiệm vụ**                                 |
-|--------|------------------------|----------------------------------------------|
-| 1      | Phạm Thị Kim Phượng    | Thiết kế giao diện, quy trình nghiệp vụ      |
-| 2      | Nguyễn Minh Hoàng      | Thiết kế giao diện, cơ sở dữ liệu            |
-| 3      | Hoàng Quốc Phong       | Tìm hiểu thuật toán                          |
+| **STT** | **Tên thành viên**    |                                    **Nhiệm vụ**                                  |
+|--------|------------------------|----------------------------------------------------------------------------------|
+| 1      | Phạm Thị Kim Phượng    | Thiết kế giao diện, quy trình nghiệp vụ, cơ sở dữ liệu, tìm hiểu thuật toán      |
+| 2      | Nguyễn Minh Hoàng      | Thiết kế giao diện, cơ sở dữ liệu, quy trình nghiệp vụ, tìm hiểu thuật toán      |
+| 3      | Hoàng Quốc Phong       | Thiết kế giao diện, tìm hiểu thuật toán, quy trình nghiệp vụ, cơ sở dữ liệu      |
 
 # Khảo sát nghiệp vụ: quy trình quản lý cửa hàng mỹ phẩm
 
 ## 1. Quy trình đăng nhập nhân viên thu ngân
-- **Bắt đầu**: Nhân viên mở ứng dụng và tiến hành đăng nhập bằng tài khoản cá nhân (username và mật khẩu).
+- **Bắt đầu**: Nhân viên mở ứng dụng và tiến hành đăng nhập bằng tài khoản dành cho nhân viên thu ngân (username và mật khẩu).
 - **Xác thực**: Hệ thống kiểm tra thông tin đăng nhập.
   - Nếu đúng: Nhân viên sẽ được phân quyền (chỉ truy cập các chức năng liên quan đến bán hàng).
   - Nếu sai: Hệ thống hiển thị thông báo đăng nhập thất bại và yêu cầu thử lại.
