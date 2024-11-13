@@ -5,6 +5,18 @@ VisualStudioVersion = 17.10.35201.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aura-skin", "aura-skin\aura-skin.csproj", "{20ED6B91-9424-490D-B26D-29A10E35D993}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserControls", "UserControls", "{46518A14-1A44-4B5A-815B-D97C7B9294C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundedBorderControl", "RoundedBorderControl\RoundedBorderControl.csproj", "{35E59D9F-4311-42C9-882C-D97078191FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientButtonRadiusControl", "GradientButtonRadiusControl\GradientButtonRadiusControl.csproj", "{0F05B640-D0E9-41FA-A546-05FA61DD5FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientPanelRadiusControl", "GradientPanelRadiusControl\GradientPanelRadiusControl.csproj", "{CE0D36B4-6432-441D-92E2-A23DCDF3981C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListMainPanel", "ListMainPanel", "{6F9118C7-3B36-428F-AE82-34255D47BEB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelBanHangControl", "PanelBanHangControl\PanelBanHangControl.csproj", "{5E601531-037D-46E5-ACDB-7E82442F4A92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +27,32 @@ Global
 		{20ED6B91-9424-490D-B26D-29A10E35D993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20ED6B91-9424-490D-B26D-29A10E35D993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20ED6B91-9424-490D-B26D-29A10E35D993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E59D9F-4311-42C9-882C-D97078191FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E59D9F-4311-42C9-882C-D97078191FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E59D9F-4311-42C9-882C-D97078191FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E59D9F-4311-42C9-882C-D97078191FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F05B640-D0E9-41FA-A546-05FA61DD5FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F05B640-D0E9-41FA-A546-05FA61DD5FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F05B640-D0E9-41FA-A546-05FA61DD5FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F05B640-D0E9-41FA-A546-05FA61DD5FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0D36B4-6432-441D-92E2-A23DCDF3981C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0D36B4-6432-441D-92E2-A23DCDF3981C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0D36B4-6432-441D-92E2-A23DCDF3981C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0D36B4-6432-441D-92E2-A23DCDF3981C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E601531-037D-46E5-ACDB-7E82442F4A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E601531-037D-46E5-ACDB-7E82442F4A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E601531-037D-46E5-ACDB-7E82442F4A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E601531-037D-46E5-ACDB-7E82442F4A92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35E59D9F-4311-42C9-882C-D97078191FB1} = {46518A14-1A44-4B5A-815B-D97C7B9294C9}
+		{0F05B640-D0E9-41FA-A546-05FA61DD5FED} = {46518A14-1A44-4B5A-815B-D97C7B9294C9}
+		{CE0D36B4-6432-441D-92E2-A23DCDF3981C} = {46518A14-1A44-4B5A-815B-D97C7B9294C9}
+		{6F9118C7-3B36-428F-AE82-34255D47BEB9} = {46518A14-1A44-4B5A-815B-D97C7B9294C9}
+		{5E601531-037D-46E5-ACDB-7E82442F4A92} = {6F9118C7-3B36-428F-AE82-34255D47BEB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4451ADA1-07E0-447F-84B5-CC0DBE296547}

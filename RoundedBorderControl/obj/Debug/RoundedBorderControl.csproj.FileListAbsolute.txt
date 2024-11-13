@@ -1,0 +1,6 @@
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\RoundedBorderControl\bin\Debug\RoundedBorderControl.dll
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\RoundedBorderControl\bin\Debug\RoundedBorderControl.pdb
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\RoundedBorderControl\obj\Debug\RoundedBorderControl.csproj.AssemblyReference.cache
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\RoundedBorderControl\obj\Debug\RoundedBorderControl.csproj.CoreCompileInputs.cache
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\RoundedBorderControl\obj\Debug\RoundedBorderControl.dll
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\RoundedBorderControl\obj\Debug\RoundedBorderControl.pdb

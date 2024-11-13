@@ -14,9 +14,12 @@ namespace aura_skin
         [STAThread]
         static void Main()
         {
+            //License of Syncfusion
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NDaF5cWGtCf1FpRGJGfV5ycEVPal9TTnNZUj0eQnxTdEFiWH5fcnVRRGRbUkxyXw==");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frm_Login());
         }
     }
 }
