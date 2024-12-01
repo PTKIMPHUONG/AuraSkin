@@ -12,6 +12,9 @@ using System.Runtime.InteropServices;
 using Syncfusion.Drawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using aura_skin.BUS;
+using aura_skin.DAO;
+using System.Diagnostics.Eventing.Reader;
 
 namespace aura_skin
 {
@@ -58,7 +61,8 @@ namespace aura_skin
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-            if (txt_tenDangNhap.Text == "123" && txt_password.Text == "123" || txt_tenDangNhap.Text == "admin" && txt_password.Text == "123")
+            //if (txt_tenDangNhap.Text == "123" && txt_password.Text == "123" || txt_tenDangNhap.Text == "admin" && txt_password.Text == "123")
+            if(CheckUsernameAndPass(txt_tenDangNhap.Text, txt_password.Text))
             {
                 this.Hide();
                 frm_Main mainForm = new frm_Main();
@@ -66,6 +70,17 @@ namespace aura_skin
                 mainForm.ShowDialog();
                 this.Close();
             }
+        }
+        
+        private bool CheckUsernameAndPass(string username, string password)
+        {
+            UsersBUS usersBUS = new UsersBUS();
+            foreach (User item in usersBUS.users)
+            {
+                if (item.username == username && item.password == password)
+                    return true;
+            }
+            return false;
         }
     }
 }

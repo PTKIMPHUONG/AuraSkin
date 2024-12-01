@@ -102,6 +102,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Drawing.Common.9.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
@@ -117,6 +118,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\UsersBUS.cs" />
+    <Compile Include="DAO\ConnectionManager.cs" />
+    <Compile Include="DAO\UsersDAO.cs" />
+    <Compile Include="DAO\Database_AuraSkin.cs">
+      <DependentUpon>Database_AuraSkin.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Database_AuraSkin.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database_AuraSkin.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Users.cs" />
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +168,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DAO\Database_AuraSkin.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Database_AuraSkin.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAO\Database_AuraSkin.dbml.layout">
+      <DependentUpon>Database_AuraSkin.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,5 +200,9 @@
       <Name>PanelNhanVienControl</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
