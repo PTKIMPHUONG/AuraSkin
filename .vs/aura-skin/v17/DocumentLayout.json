@@ -3,60 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E601531-037D-46E5-ACDB-7E82442F4A92}|PanelBanHangControl\\PanelBanHangControl.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\panelbanhangcontrol\\panelbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E601531-037D-46E5-ACDB-7E82442F4A92}|PanelBanHangControl\\PanelBanHangControl.csproj|solutionrelative:panelbanhangcontrol\\panelbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E601531-037D-46E5-ACDB-7E82442F4A92}|PanelBanHangControl\\PanelBanHangControl.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\panelbanhangcontrol\\panelbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5E601531-037D-46E5-ACDB-7E82442F4A92}|PanelBanHangControl\\PanelBanHangControl.csproj|solutionrelative:panelbanhangcontrol\\panelbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{004D0B31-0159-4DEB-91E8-9640CA42D9AC}|PanelOrdersControl\\PanelOrdersControl.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\panelorderscontrol\\panelorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{004D0B31-0159-4DEB-91E8-9640CA42D9AC}|PanelOrdersControl\\PanelOrdersControl.csproj|solutionrelative:panelorderscontrol\\panelorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4E8D9A2-63DB-418F-9D83-FE38691BBE90}|PanelSaleControl\\PanelSaleControl.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\panelsalecontrol\\panelsale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B4E8D9A2-63DB-418F-9D83-FE38691BBE90}|PanelSaleControl\\PanelSaleControl.csproj|solutionrelative:panelsalecontrol\\panelsale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06FA2889-481C-439A-A965-1B889905C1FD}|PanelNhanVienControl\\PanelNhanVienControl.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\panelnhanviencontrol\\panelnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{06FA2889-481C-439A-A965-1B889905C1FD}|PanelNhanVienControl\\PanelNhanVienControl.csproj|solutionrelative:panelnhanviencontrol\\panelnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A99DEA09-1B03-4E90-BBD1-341ADAE3C2E1}|PanelSupplierControl\\PanelSupplierControl.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\panelsuppliercontrol\\panelsupplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A99DEA09-1B03-4E90-BBD1-341ADAE3C2E1}|PanelSupplierControl\\PanelSupplierControl.csproj|solutionrelative:panelsuppliercontrol\\panelsupplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C84DCDE3-7B93-4FD2-A3E5-1AB642AA1B05}|PanelCustomerControl\\PanelCustomerControl.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\panelcustomercontrol\\panelcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C84DCDE3-7B93-4FD2-A3E5-1AB642AA1B05}|PanelCustomerControl\\PanelCustomerControl.csproj|solutionrelative:panelcustomercontrol\\panelcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,179 +46,84 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "aura-skin\\Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "aura-skin\\Properties\\AssemblyInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T17:01:38.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "aura-skin\\Properties\\Resources.resx",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\Resources.resx",
-              "RelativeToolTip": "aura-skin\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-11-13T17:01:35.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Settings.settings",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\Settings.settings",
-              "RelativeDocumentMoniker": "aura-skin\\Properties\\Settings.settings",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\Settings.settings",
-              "RelativeToolTip": "aura-skin\\Properties\\Settings.settings",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2024-11-13T17:01:33.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Program.cs",
-              "RelativeDocumentMoniker": "aura-skin\\Program.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Program.cs",
-              "RelativeToolTip": "aura-skin\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "PanelOrders.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelOrdersControl\\PanelOrders.cs",
+              "RelativeDocumentMoniker": "PanelOrdersControl\\PanelOrders.cs",
+              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelOrdersControl\\PanelOrders.cs [Design]",
+              "RelativeToolTip": "PanelOrdersControl\\PanelOrders.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T17:01:31.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\App.config",
-              "RelativeDocumentMoniker": "aura-skin\\App.config",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\App.config",
-              "RelativeToolTip": "aura-skin\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-13T17:01:20.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T03:35:30.011Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\packages.config",
-              "RelativeDocumentMoniker": "aura-skin\\packages.config",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\packages.config",
-              "RelativeToolTip": "aura-skin\\packages.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-13T17:01:09.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PanelBanHang.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelBanHangControl\\PanelBanHang.cs",
-              "RelativeDocumentMoniker": "PanelBanHangControl\\PanelBanHang.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelBanHangControl\\PanelBanHang.cs",
-              "RelativeToolTip": "PanelBanHangControl\\PanelBanHang.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
+              "Title": "PanelNhanVien.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelNhanVienControl\\PanelNhanVien.cs",
+              "RelativeDocumentMoniker": "PanelNhanVienControl\\PanelNhanVien.cs",
+              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelNhanVienControl\\PanelNhanVien.cs [Design]",
+              "RelativeToolTip": "PanelNhanVienControl\\PanelNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T16:37:05.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T16:58:36.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "frm_Main.cs",
               "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Main.cs",
               "RelativeDocumentMoniker": "aura-skin\\frm_Main.cs",
               "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Main.cs",
               "RelativeToolTip": "aura-skin\\frm_Main.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAjwGkAAAAQAAAA",
+              "ViewState": "AQIAAOwAAAAAAAAAAAAuwAYBAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T06:38:00.728Z",
+              "WhenOpened": "2024-11-22T01:20:21.758Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frm_Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Login.cs",
-              "RelativeDocumentMoniker": "aura-skin\\frm_Login.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Login.cs [Design]",
-              "RelativeToolTip": "aura-skin\\frm_Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T10:01:19Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "frm_Main.cs [Design]",
               "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Main.cs",
               "RelativeDocumentMoniker": "aura-skin\\frm_Main.cs",
               "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Main.cs [Design]",
               "RelativeToolTip": "aura-skin\\frm_Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T06:36:17.196Z",
+              "WhenOpened": "2024-11-22T01:16:12.939Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frm_Register.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Register.cs",
-              "RelativeDocumentMoniker": "aura-skin\\frm_Register.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Register.cs",
-              "RelativeToolTip": "aura-skin\\frm_Register.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAhwBYAAAAMAAAA",
+              "DocumentIndex": 2,
+              "Title": "PanelSale.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelSaleControl\\PanelSale.cs",
+              "RelativeDocumentMoniker": "PanelSaleControl\\PanelSale.cs",
+              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelSaleControl\\PanelSale.cs [Design]",
+              "RelativeToolTip": "PanelSaleControl\\PanelSale.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T06:21:29.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T01:11:37.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frm_Login.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Login.cs",
-              "RelativeDocumentMoniker": "aura-skin\\frm_Login.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Login.cs",
-              "RelativeToolTip": "aura-skin\\frm_Login.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAMwEEAAAAQAAAA",
+              "DocumentIndex": 5,
+              "Title": "PanelSupplier.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelSupplierControl\\PanelSupplier.cs",
+              "RelativeDocumentMoniker": "PanelSupplierControl\\PanelSupplier.cs",
+              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelSupplierControl\\PanelSupplier.cs [Design]",
+              "RelativeToolTip": "PanelSupplierControl\\PanelSupplier.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T08:28:50.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T01:04:42.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PanelBanHang.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelBanHangControl\\PanelBanHang.cs",
-              "RelativeDocumentMoniker": "PanelBanHangControl\\PanelBanHang.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelBanHangControl\\PanelBanHang.cs [Design]",
-              "RelativeToolTip": "PanelBanHangControl\\PanelBanHang.cs [Design]",
+              "DocumentIndex": 6,
+              "Title": "PanelCustomer.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelCustomerControl\\PanelCustomer.cs",
+              "RelativeDocumentMoniker": "PanelCustomerControl\\PanelCustomer.cs",
+              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\PanelCustomerControl\\PanelCustomer.cs [Design]",
+              "RelativeToolTip": "PanelCustomerControl\\PanelCustomer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T13:24:48.042Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frm_Register.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Register.cs",
-              "RelativeDocumentMoniker": "aura-skin\\frm_Register.cs",
-              "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Register.cs [Design]",
-              "RelativeToolTip": "aura-skin\\frm_Register.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T06:22:21.201Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-22T01:04:30.413Z"
             }
           ]
         },
