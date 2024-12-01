@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuraSkin" Class="Database_AuraSkinDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=AuraSkin;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="aura_skin.Properties.Settings" SettingsPropertyName="AuraSkinConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="id_category" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="category_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Product" Member="Products" ThisKey="id_category" OtherKey="id_category" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Consignments" Member="Consignments">
+    <Type Name="Consignment">
+      <Column Name="id_consignment" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_product_variant" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="expiration_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="stock_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProductVariant_Consignment" Member="ProductVariant" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="ProductVariant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerInfo" Member="CustomerInfos">
+    <Type Name="CustomerInfo">
+      <Column Name="id_customer_info" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="contact_number" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="address_line" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ward" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="district" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="CustomerInfo_Order" Member="Orders" ThisKey="id_customer_info" OtherKey="customer_info" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderItems" Member="OrderItems">
+    <Type Name="OrderItem">
+      <Column Name="id_order" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_product_variant" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Order_OrderItem" Member="Order" ThisKey="id_order" OtherKey="id_order" Type="Order" IsForeignKey="true" />
+      <Association Name="ProductVariant_OrderItem" Member="ProductVariant" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="ProductVariant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="id_order" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_user" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="id_status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="create_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="delivery_fee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="total_amount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="customer_info" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Order_OrderItem" Member="OrderItems" ThisKey="id_order" OtherKey="id_order" Type="OrderItem" />
+      <Association Name="CustomerInfo_Order" Member="CustomerInfo" ThisKey="customer_info" OtherKey="id_customer_info" Type="CustomerInfo" IsForeignKey="true" />
+      <Association Name="StatusOrder_Order" Member="StatusOrder" ThisKey="id_status" OtherKey="id_status" Type="StatusOrder" IsForeignKey="true" />
+      <Association Name="User_Order" Member="User" ThisKey="id_user" OtherKey="id_user" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="id_product" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_category" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="id_supplier" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="id_sale" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="product_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="default_price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="default_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductVariant" Member="ProductVariants" ThisKey="id_product" OtherKey="id_product" Type="ProductVariant" />
+      <Association Name="Category_Product" Member="Category" ThisKey="id_category" OtherKey="id_category" Type="Category" IsForeignKey="true" />
+      <Association Name="Sale_Product" Member="Sale" ThisKey="id_sale" OtherKey="id_sale" Type="Sale" IsForeignKey="true" />
+      <Association Name="Supplier_Product" Member="Supplier" ThisKey="id_supplier" OtherKey="id_supplier" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductVariants" Member="ProductVariants">
+    <Type Name="ProductVariant">
+      <Column Name="id_product_variant" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_product" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="variant_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="thumbnail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ProductVariant_Consignment" Member="Consignments" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="Consignment" />
+      <Association Name="ProductVariant_OrderItem" Member="OrderItems" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="OrderItem" />
+      <Association Name="Product_ProductVariant" Member="Product" ThisKey="id_product" OtherKey="id_product" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sale" Member="Sales">
+    <Type Name="Sale">
+      <Column Name="id_sale" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_user" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="start_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="percent_sale" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Sale_Product" Member="Products" ThisKey="id_sale" OtherKey="id_sale" Type="Product" />
+      <Association Name="User_Sale" Member="User" ThisKey="id_user" OtherKey="id_user" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusOrder" Member="StatusOrders">
+    <Type Name="StatusOrder">
+      <Column Name="id_status" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="StatusOrder_Order" Member="Orders" ThisKey="id_status" OtherKey="id_status" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Supplier" Member="Suppliers">
+    <Type Name="Supplier">
+      <Column Name="id_supplier" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="supplier_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Supplier_Product" Member="Products" ThisKey="id_supplier" OtherKey="id_supplier" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="id_user" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="User_Order" Member="Orders" ThisKey="id_user" OtherKey="id_user" Type="Order" />
+      <Association Name="User_Sale" Member="Sales" ThisKey="id_user" OtherKey="id_user" Type="Sale" />
+    </Type>
+  </Table>
+</Database>
