@@ -118,8 +118,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CategoriesBUS.cs" />
+    <Compile Include="BUS\ProductBUS.cs" />
+    <Compile Include="BUS\SuppliersBUS.cs" />
     <Compile Include="BUS\UsersBUS.cs" />
+    <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\ConnectionManager.cs" />
+    <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="DAO\SuppliersDAO.cs" />
     <Compile Include="DAO\UsersDAO.cs" />
     <Compile Include="DAO\Database_AuraSkin.cs">
       <DependentUpon>Database_AuraSkin.dbml</DependentUpon>
@@ -130,6 +136,18 @@
       <DependentUpon>Database_AuraSkin.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTO\Users.cs" />
+    <Compile Include="frmGoiYSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoiYSanPham.Designer.cs">
+      <DependentUpon>frmGoiYSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Customer.Designer.cs">
+      <DependentUpon>frm_Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +168,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGoiYSanPham.resx">
+      <DependentUpon>frmGoiYSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Customer.resx">
+      <DependentUpon>frm_Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>

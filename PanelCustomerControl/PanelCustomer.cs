@@ -15,6 +15,17 @@ namespace PanelCustomerControl
         public PanelCustomer()
         {
             InitializeComponent();
+            InitializeControlsDictionary();
+        }
+
+        public Dictionary<string, Control> ControlsDictionary { get; private set; }
+        private void InitializeControlsDictionary()
+        {
+            ControlsDictionary = new Dictionary<string, Control>();
+            foreach (Control control in this.Controls)
+            {
+                ControlsDictionary[control.Name] = control;
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

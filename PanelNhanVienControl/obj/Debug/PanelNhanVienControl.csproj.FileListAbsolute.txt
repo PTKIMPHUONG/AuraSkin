@@ -42,3 +42,5 @@ C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Deskt
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\PanelNhanVienControl\obj\Debug\PanelNha.453DC9BA.Up2Date
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\PanelNhanVienControl\obj\Debug\PanelNhanVienControl.dll
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\PanelNhanVienControl\obj\Debug\PanelNhanVienControl.pdb
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\PanelNhanVienControl\bin\Debug\GradientPanelRadiusControl.dll
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\PanelNhanVienControl\bin\Debug\GradientPanelRadiusControl.pdb

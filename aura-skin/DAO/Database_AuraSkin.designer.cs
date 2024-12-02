@@ -33,9 +33,6 @@ namespace aura_skin.DAO
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
-    partial void InsertConsignment(Consignment instance);
-    partial void UpdateConsignment(Consignment instance);
-    partial void DeleteConsignment(Consignment instance);
     partial void InsertCustomerInfo(CustomerInfo instance);
     partial void UpdateCustomerInfo(CustomerInfo instance);
     partial void DeleteCustomerInfo(CustomerInfo instance);
@@ -48,9 +45,6 @@ namespace aura_skin.DAO
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
-    partial void InsertProductVariant(ProductVariant instance);
-    partial void UpdateProductVariant(ProductVariant instance);
-    partial void DeleteProductVariant(ProductVariant instance);
     partial void InsertSale(Sale instance);
     partial void UpdateSale(Sale instance);
     partial void DeleteSale(Sale instance);
@@ -103,14 +97,6 @@ namespace aura_skin.DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<Consignment> Consignments
-		{
-			get
-			{
-				return this.GetTable<Consignment>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CustomerInfo> CustomerInfos
 		{
 			get
@@ -140,14 +126,6 @@ namespace aura_skin.DAO
 			get
 			{
 				return this.GetTable<Product>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ProductVariant> ProductVariants
-		{
-			get
-			{
-				return this.GetTable<ProductVariant>();
 			}
 		}
 		
@@ -319,205 +297,6 @@ namespace aura_skin.DAO
 		{
 			this.SendPropertyChanging();
 			entity.Category = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Consignments")]
-	public partial class Consignment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id_consignment;
-		
-		private string _id_product_variant;
-		
-		private decimal _price;
-		
-		private System.Nullable<System.DateTime> _expiration_date;
-		
-		private int _stock_quantity;
-		
-		private EntityRef<ProductVariant> _ProductVariant;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_consignmentChanging(string value);
-    partial void Onid_consignmentChanged();
-    partial void Onid_product_variantChanging(string value);
-    partial void Onid_product_variantChanged();
-    partial void OnpriceChanging(decimal value);
-    partial void OnpriceChanged();
-    partial void Onexpiration_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Onexpiration_dateChanged();
-    partial void Onstock_quantityChanging(int value);
-    partial void Onstock_quantityChanged();
-    #endregion
-		
-		public Consignment()
-		{
-			this._ProductVariant = default(EntityRef<ProductVariant>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_consignment", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_consignment
-		{
-			get
-			{
-				return this._id_consignment;
-			}
-			set
-			{
-				if ((this._id_consignment != value))
-				{
-					this.Onid_consignmentChanging(value);
-					this.SendPropertyChanging();
-					this._id_consignment = value;
-					this.SendPropertyChanged("id_consignment");
-					this.Onid_consignmentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product_variant", DbType="VarChar(10)")]
-		public string id_product_variant
-		{
-			get
-			{
-				return this._id_product_variant;
-			}
-			set
-			{
-				if ((this._id_product_variant != value))
-				{
-					if (this._ProductVariant.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_product_variantChanging(value);
-					this.SendPropertyChanging();
-					this._id_product_variant = value;
-					this.SendPropertyChanged("id_product_variant");
-					this.Onid_product_variantChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Decimal(18,2) NOT NULL")]
-		public decimal price
-		{
-			get
-			{
-				return this._price;
-			}
-			set
-			{
-				if ((this._price != value))
-				{
-					this.OnpriceChanging(value);
-					this.SendPropertyChanging();
-					this._price = value;
-					this.SendPropertyChanged("price");
-					this.OnpriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_expiration_date", DbType="Date")]
-		public System.Nullable<System.DateTime> expiration_date
-		{
-			get
-			{
-				return this._expiration_date;
-			}
-			set
-			{
-				if ((this._expiration_date != value))
-				{
-					this.Onexpiration_dateChanging(value);
-					this.SendPropertyChanging();
-					this._expiration_date = value;
-					this.SendPropertyChanged("expiration_date");
-					this.Onexpiration_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_quantity", DbType="Int NOT NULL")]
-		public int stock_quantity
-		{
-			get
-			{
-				return this._stock_quantity;
-			}
-			set
-			{
-				if ((this._stock_quantity != value))
-				{
-					this.Onstock_quantityChanging(value);
-					this.SendPropertyChanging();
-					this._stock_quantity = value;
-					this.SendPropertyChanged("stock_quantity");
-					this.Onstock_quantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductVariant_Consignment", Storage="_ProductVariant", ThisKey="id_product_variant", OtherKey="id_product_variant", IsForeignKey=true)]
-		public ProductVariant ProductVariant
-		{
-			get
-			{
-				return this._ProductVariant.Entity;
-			}
-			set
-			{
-				ProductVariant previousValue = this._ProductVariant.Entity;
-				if (((previousValue != value) 
-							|| (this._ProductVariant.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProductVariant.Entity = null;
-						previousValue.Consignments.Remove(this);
-					}
-					this._ProductVariant.Entity = value;
-					if ((value != null))
-					{
-						value.Consignments.Add(this);
-						this._id_product_variant = value.id_product_variant;
-					}
-					else
-					{
-						this._id_product_variant = default(string);
-					}
-					this.SendPropertyChanged("ProductVariant");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -811,13 +590,13 @@ namespace aura_skin.DAO
 		
 		private string _id_order;
 		
-		private string _id_product_variant;
+		private string _id_product;
 		
 		private int _quantity;
 		
 		private EntityRef<Order> _Order;
 		
-		private EntityRef<ProductVariant> _ProductVariant;
+		private EntityRef<Product> _Product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -825,8 +604,8 @@ namespace aura_skin.DAO
     partial void OnCreated();
     partial void Onid_orderChanging(string value);
     partial void Onid_orderChanged();
-    partial void Onid_product_variantChanging(string value);
-    partial void Onid_product_variantChanged();
+    partial void Onid_productChanging(string value);
+    partial void Onid_productChanged();
     partial void OnquantityChanging(int value);
     partial void OnquantityChanged();
     #endregion
@@ -834,7 +613,7 @@ namespace aura_skin.DAO
 		public OrderItem()
 		{
 			this._Order = default(EntityRef<Order>);
-			this._ProductVariant = default(EntityRef<ProductVariant>);
+			this._Product = default(EntityRef<Product>);
 			OnCreated();
 		}
 		
@@ -862,26 +641,26 @@ namespace aura_skin.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product_variant", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_product_variant
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id_product
 		{
 			get
 			{
-				return this._id_product_variant;
+				return this._id_product;
 			}
 			set
 			{
-				if ((this._id_product_variant != value))
+				if ((this._id_product != value))
 				{
-					if (this._ProductVariant.HasLoadedOrAssignedValue)
+					if (this._Product.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.Onid_product_variantChanging(value);
+					this.Onid_productChanging(value);
 					this.SendPropertyChanging();
-					this._id_product_variant = value;
-					this.SendPropertyChanged("id_product_variant");
-					this.Onid_product_variantChanged();
+					this._id_product = value;
+					this.SendPropertyChanged("id_product");
+					this.Onid_productChanged();
 				}
 			}
 		}
@@ -940,36 +719,36 @@ namespace aura_skin.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductVariant_OrderItem", Storage="_ProductVariant", ThisKey="id_product_variant", OtherKey="id_product_variant", IsForeignKey=true)]
-		public ProductVariant ProductVariant
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrderItem", Storage="_Product", ThisKey="id_product", OtherKey="id_product", IsForeignKey=true)]
+		public Product Product
 		{
 			get
 			{
-				return this._ProductVariant.Entity;
+				return this._Product.Entity;
 			}
 			set
 			{
-				ProductVariant previousValue = this._ProductVariant.Entity;
+				Product previousValue = this._Product.Entity;
 				if (((previousValue != value) 
-							|| (this._ProductVariant.HasLoadedOrAssignedValue == false)))
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._ProductVariant.Entity = null;
+						this._Product.Entity = null;
 						previousValue.OrderItems.Remove(this);
 					}
-					this._ProductVariant.Entity = value;
+					this._Product.Entity = value;
 					if ((value != null))
 					{
 						value.OrderItems.Add(this);
-						this._id_product_variant = value.id_product_variant;
+						this._id_product = value.id_product;
 					}
 					else
 					{
-						this._id_product_variant = default(string);
+						this._id_product = default(string);
 					}
-					this.SendPropertyChanged("ProductVariant");
+					this.SendPropertyChanged("Product");
 				}
 			}
 		}
@@ -1374,9 +1153,11 @@ namespace aura_skin.DAO
 		
 		private string _default_image;
 		
+		private int _stock_quantity;
+		
 		private bool _is_active;
 		
-		private EntitySet<ProductVariant> _ProductVariants;
+		private EntitySet<OrderItem> _OrderItems;
 		
 		private EntityRef<Category> _Category;
 		
@@ -1404,13 +1185,15 @@ namespace aura_skin.DAO
     partial void OndescriptionChanged();
     partial void Ondefault_imageChanging(string value);
     partial void Ondefault_imageChanged();
+    partial void Onstock_quantityChanging(int value);
+    partial void Onstock_quantityChanged();
     partial void Onis_activeChanging(bool value);
     partial void Onis_activeChanged();
     #endregion
 		
 		public Product()
 		{
-			this._ProductVariants = new EntitySet<ProductVariant>(new Action<ProductVariant>(this.attach_ProductVariants), new Action<ProductVariant>(this.detach_ProductVariants));
+			this._OrderItems = new EntitySet<OrderItem>(new Action<OrderItem>(this.attach_OrderItems), new Action<OrderItem>(this.detach_OrderItems));
 			this._Category = default(EntityRef<Category>);
 			this._Sale = default(EntityRef<Sale>);
 			this._Supplier = default(EntityRef<Supplier>);
@@ -1589,6 +1372,26 @@ namespace aura_skin.DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_quantity", DbType="Int NOT NULL")]
+		public int stock_quantity
+		{
+			get
+			{
+				return this._stock_quantity;
+			}
+			set
+			{
+				if ((this._stock_quantity != value))
+				{
+					this.Onstock_quantityChanging(value);
+					this.SendPropertyChanging();
+					this._stock_quantity = value;
+					this.SendPropertyChanged("stock_quantity");
+					this.Onstock_quantityChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_active", DbType="Bit NOT NULL")]
 		public bool is_active
 		{
@@ -1609,16 +1412,16 @@ namespace aura_skin.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductVariant", Storage="_ProductVariants", ThisKey="id_product", OtherKey="id_product")]
-		public EntitySet<ProductVariant> ProductVariants
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrderItem", Storage="_OrderItems", ThisKey="id_product", OtherKey="id_product")]
+		public EntitySet<OrderItem> OrderItems
 		{
 			get
 			{
-				return this._ProductVariants;
+				return this._OrderItems;
 			}
 			set
 			{
-				this._ProductVariants.Assign(value);
+				this._OrderItems.Assign(value);
 			}
 		}
 		
@@ -1744,295 +1547,16 @@ namespace aura_skin.DAO
 			}
 		}
 		
-		private void attach_ProductVariants(ProductVariant entity)
+		private void attach_OrderItems(OrderItem entity)
 		{
 			this.SendPropertyChanging();
 			entity.Product = this;
 		}
 		
-		private void detach_ProductVariants(ProductVariant entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductVariants")]
-	public partial class ProductVariant : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id_product_variant;
-		
-		private string _id_product;
-		
-		private string _variant_name;
-		
-		private string _description;
-		
-		private bool _is_active;
-		
-		private string _thumbnail;
-		
-		private EntitySet<Consignment> _Consignments;
-		
-		private EntitySet<OrderItem> _OrderItems;
-		
-		private EntityRef<Product> _Product;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_product_variantChanging(string value);
-    partial void Onid_product_variantChanged();
-    partial void Onid_productChanging(string value);
-    partial void Onid_productChanged();
-    partial void Onvariant_nameChanging(string value);
-    partial void Onvariant_nameChanged();
-    partial void OndescriptionChanging(string value);
-    partial void OndescriptionChanged();
-    partial void Onis_activeChanging(bool value);
-    partial void Onis_activeChanged();
-    partial void OnthumbnailChanging(string value);
-    partial void OnthumbnailChanged();
-    #endregion
-		
-		public ProductVariant()
-		{
-			this._Consignments = new EntitySet<Consignment>(new Action<Consignment>(this.attach_Consignments), new Action<Consignment>(this.detach_Consignments));
-			this._OrderItems = new EntitySet<OrderItem>(new Action<OrderItem>(this.attach_OrderItems), new Action<OrderItem>(this.detach_OrderItems));
-			this._Product = default(EntityRef<Product>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product_variant", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_product_variant
-		{
-			get
-			{
-				return this._id_product_variant;
-			}
-			set
-			{
-				if ((this._id_product_variant != value))
-				{
-					this.Onid_product_variantChanging(value);
-					this.SendPropertyChanging();
-					this._id_product_variant = value;
-					this.SendPropertyChanged("id_product_variant");
-					this.Onid_product_variantChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_product", DbType="VarChar(10)")]
-		public string id_product
-		{
-			get
-			{
-				return this._id_product;
-			}
-			set
-			{
-				if ((this._id_product != value))
-				{
-					if (this._Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_productChanging(value);
-					this.SendPropertyChanging();
-					this._id_product = value;
-					this.SendPropertyChanged("id_product");
-					this.Onid_productChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_variant_name", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string variant_name
-		{
-			get
-			{
-				return this._variant_name;
-			}
-			set
-			{
-				if ((this._variant_name != value))
-				{
-					this.Onvariant_nameChanging(value);
-					this.SendPropertyChanging();
-					this._variant_name = value;
-					this.SendPropertyChanged("variant_name");
-					this.Onvariant_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(MAX)")]
-		public string description
-		{
-			get
-			{
-				return this._description;
-			}
-			set
-			{
-				if ((this._description != value))
-				{
-					this.OndescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._description = value;
-					this.SendPropertyChanged("description");
-					this.OndescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_active", DbType="Bit NOT NULL")]
-		public bool is_active
-		{
-			get
-			{
-				return this._is_active;
-			}
-			set
-			{
-				if ((this._is_active != value))
-				{
-					this.Onis_activeChanging(value);
-					this.SendPropertyChanging();
-					this._is_active = value;
-					this.SendPropertyChanged("is_active");
-					this.Onis_activeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbnail", DbType="NVarChar(MAX)")]
-		public string thumbnail
-		{
-			get
-			{
-				return this._thumbnail;
-			}
-			set
-			{
-				if ((this._thumbnail != value))
-				{
-					this.OnthumbnailChanging(value);
-					this.SendPropertyChanging();
-					this._thumbnail = value;
-					this.SendPropertyChanged("thumbnail");
-					this.OnthumbnailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductVariant_Consignment", Storage="_Consignments", ThisKey="id_product_variant", OtherKey="id_product_variant")]
-		public EntitySet<Consignment> Consignments
-		{
-			get
-			{
-				return this._Consignments;
-			}
-			set
-			{
-				this._Consignments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductVariant_OrderItem", Storage="_OrderItems", ThisKey="id_product_variant", OtherKey="id_product_variant")]
-		public EntitySet<OrderItem> OrderItems
-		{
-			get
-			{
-				return this._OrderItems;
-			}
-			set
-			{
-				this._OrderItems.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductVariant", Storage="_Product", ThisKey="id_product", OtherKey="id_product", IsForeignKey=true)]
-		public Product Product
-		{
-			get
-			{
-				return this._Product.Entity;
-			}
-			set
-			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.ProductVariants.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.ProductVariants.Add(this);
-						this._id_product = value.id_product;
-					}
-					else
-					{
-						this._id_product = default(string);
-					}
-					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Consignments(Consignment entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductVariant = this;
-		}
-		
-		private void detach_Consignments(Consignment entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductVariant = null;
-		}
-		
-		private void attach_OrderItems(OrderItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductVariant = this;
-		}
-		
 		private void detach_OrderItems(OrderItem entity)
 		{
 			this.SendPropertyChanging();
-			entity.ProductVariant = null;
+			entity.Product = null;
 		}
 	}
 	

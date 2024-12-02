@@ -8,16 +8,6 @@
       <Association Name="Category_Product" Member="Products" ThisKey="id_category" OtherKey="id_category" Type="Product" />
     </Type>
   </Table>
-  <Table Name="dbo.Consignments" Member="Consignments">
-    <Type Name="Consignment">
-      <Column Name="id_consignment" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="id_product_variant" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="expiration_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="stock_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ProductVariant_Consignment" Member="ProductVariant" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="ProductVariant" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CustomerInfo" Member="CustomerInfos">
     <Type Name="CustomerInfo">
       <Column Name="id_customer_info" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -35,10 +25,10 @@
   <Table Name="dbo.OrderItems" Member="OrderItems">
     <Type Name="OrderItem">
       <Column Name="id_order" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="id_product_variant" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_product" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Order_OrderItem" Member="Order" ThisKey="id_order" OtherKey="id_order" Type="Order" IsForeignKey="true" />
-      <Association Name="ProductVariant_OrderItem" Member="ProductVariant" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="ProductVariant" IsForeignKey="true" />
+      <Association Name="Product_OrderItem" Member="Product" ThisKey="id_product" OtherKey="id_product" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Orders" Member="Orders">
@@ -66,24 +56,12 @@
       <Column Name="default_price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="default_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="stock_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Product_ProductVariant" Member="ProductVariants" ThisKey="id_product" OtherKey="id_product" Type="ProductVariant" />
+      <Association Name="Product_OrderItem" Member="OrderItems" ThisKey="id_product" OtherKey="id_product" Type="OrderItem" />
       <Association Name="Category_Product" Member="Category" ThisKey="id_category" OtherKey="id_category" Type="Category" IsForeignKey="true" />
       <Association Name="Sale_Product" Member="Sale" ThisKey="id_sale" OtherKey="id_sale" Type="Sale" IsForeignKey="true" />
       <Association Name="Supplier_Product" Member="Supplier" ThisKey="id_supplier" OtherKey="id_supplier" Type="Supplier" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ProductVariants" Member="ProductVariants">
-    <Type Name="ProductVariant">
-      <Column Name="id_product_variant" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="id_product" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="variant_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="thumbnail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="ProductVariant_Consignment" Member="Consignments" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="Consignment" />
-      <Association Name="ProductVariant_OrderItem" Member="OrderItems" ThisKey="id_product_variant" OtherKey="id_product_variant" Type="OrderItem" />
-      <Association Name="Product_ProductVariant" Member="Product" ThisKey="id_product" OtherKey="id_product" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Sale" Member="Sales">

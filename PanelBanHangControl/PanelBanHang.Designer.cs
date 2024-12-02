@@ -57,6 +57,7 @@
             this.btnThanhToan = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnXoaKhoiGio = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnThemVaoGio = new GradientButtonRadiusControl.GradientRadiusButton();
+            this.btnGoiYSanPham = new GradientButtonRadiusControl.GradientRadiusButton();
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFindSP)).BeginInit();
@@ -92,7 +93,7 @@
             // 
             // txtDonViTinh
             // 
-            this.txtDonViTinh.BeforeTouchSize = new System.Drawing.Size(100, 22);
+            this.txtDonViTinh.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.txtDonViTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDonViTinh.CornerRadius = 2;
             this.txtDonViTinh.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -105,7 +106,7 @@
             // 
             // txtFindSP
             // 
-            this.txtFindSP.BeforeTouchSize = new System.Drawing.Size(100, 22);
+            this.txtFindSP.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.txtFindSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFindSP.CornerRadius = 2;
             this.txtFindSP.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -242,7 +243,7 @@
             // 
             // textBoxExt1
             // 
-            this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(100, 22);
+            this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.textBoxExt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxExt1.CornerRadius = 2;
             this.textBoxExt1.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -255,7 +256,7 @@
             // 
             // textBoxExt3
             // 
-            this.textBoxExt3.BeforeTouchSize = new System.Drawing.Size(100, 22);
+            this.textBoxExt3.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.textBoxExt3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxExt3.CornerRadius = 2;
             this.textBoxExt3.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -268,7 +269,7 @@
             // 
             // textBoxExt4
             // 
-            this.textBoxExt4.BeforeTouchSize = new System.Drawing.Size(100, 22);
+            this.textBoxExt4.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.textBoxExt4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxExt4.CornerRadius = 2;
             this.textBoxExt4.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -313,7 +314,7 @@
             this.btnTimKiem.GradientColor1 = System.Drawing.Color.LightPink;
             this.btnTimKiem.GradientColor2 = System.Drawing.Color.LightSkyBlue;
             this.btnTimKiem.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.btnTimKiem.Location = new System.Drawing.Point(1020, 464);
+            this.btnTimKiem.Location = new System.Drawing.Point(943, 464);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(239, 71);
             this.btnTimKiem.Style.ForeColor = System.Drawing.Color.SlateBlue;
@@ -330,7 +331,7 @@
             this.btnThanhToan.GradientColor1 = System.Drawing.Color.LightPink;
             this.btnThanhToan.GradientColor2 = System.Drawing.Color.LightSkyBlue;
             this.btnThanhToan.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.btnThanhToan.Location = new System.Drawing.Point(752, 464);
+            this.btnThanhToan.Location = new System.Drawing.Point(675, 464);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(239, 71);
             this.btnThanhToan.Style.ForeColor = System.Drawing.Color.SlateBlue;
@@ -347,7 +348,7 @@
             this.btnXoaKhoiGio.GradientColor1 = System.Drawing.Color.LightPink;
             this.btnXoaKhoiGio.GradientColor2 = System.Drawing.Color.LightSkyBlue;
             this.btnXoaKhoiGio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.btnXoaKhoiGio.Location = new System.Drawing.Point(486, 464);
+            this.btnXoaKhoiGio.Location = new System.Drawing.Point(409, 464);
             this.btnXoaKhoiGio.Name = "btnXoaKhoiGio";
             this.btnXoaKhoiGio.Size = new System.Drawing.Size(239, 71);
             this.btnXoaKhoiGio.Style.ForeColor = System.Drawing.Color.SlateBlue;
@@ -364,18 +365,36 @@
             this.btnThemVaoGio.GradientColor1 = System.Drawing.Color.LightPink;
             this.btnThemVaoGio.GradientColor2 = System.Drawing.Color.LightSkyBlue;
             this.btnThemVaoGio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.btnThemVaoGio.Location = new System.Drawing.Point(206, 464);
+            this.btnThemVaoGio.Location = new System.Drawing.Point(129, 464);
             this.btnThemVaoGio.Name = "btnThemVaoGio";
             this.btnThemVaoGio.Size = new System.Drawing.Size(239, 71);
             this.btnThemVaoGio.Style.ForeColor = System.Drawing.Color.SlateBlue;
             this.btnThemVaoGio.TabIndex = 63;
             this.btnThemVaoGio.Text = "Thêm vào giỏ";
             // 
+            // btnGoiYSanPham
+            // 
+            this.btnGoiYSanPham.BorderColor = System.Drawing.Color.Transparent;
+            this.btnGoiYSanPham.CornerRadius = 10;
+            this.btnGoiYSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoiYSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGoiYSanPham.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnGoiYSanPham.GradientColor1 = System.Drawing.Color.LightPink;
+            this.btnGoiYSanPham.GradientColor2 = System.Drawing.Color.LightSkyBlue;
+            this.btnGoiYSanPham.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.btnGoiYSanPham.Location = new System.Drawing.Point(1214, 464);
+            this.btnGoiYSanPham.Name = "btnGoiYSanPham";
+            this.btnGoiYSanPham.Size = new System.Drawing.Size(239, 71);
+            this.btnGoiYSanPham.Style.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnGoiYSanPham.TabIndex = 74;
+            this.btnGoiYSanPham.Text = "Gợi ý sản phẩm";
+            // 
             // PanelBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnGoiYSanPham);
             this.Controls.Add(this.numericUpDownExt1);
             this.Controls.Add(this.textBoxExt4);
             this.Controls.Add(this.textBoxExt3);
@@ -438,5 +457,6 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt3;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt4;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt numericUpDownExt1;
+        private GradientButtonRadiusControl.GradientRadiusButton btnGoiYSanPham;
     }
 }

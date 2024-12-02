@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GradientButtonRadiusControl">
-      <HintPath>..\GradientButtonRadiusControl\obj\Debug\GradientButtonRadiusControl.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Core.WinForms.27.2.2\lib\net462\Syncfusion.Core.WinForms.dll</HintPath>
     </Reference>
@@ -110,6 +107,16 @@
     <EmbeddedResource Include="PanelNhanVien.resx">
       <DependentUpon>PanelNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GradientButtonRadiusControl\GradientButtonRadiusControl.csproj">
+      <Project>{0f05b640-d0e9-41fa-a546-05fa61dd5fed}</Project>
+      <Name>GradientButtonRadiusControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GradientPanelRadiusControl\GradientPanelRadiusControl.csproj">
+      <Project>{ce0d36b4-6432-441d-92e2-a23dcdf3981c}</Project>
+      <Name>GradientPanelRadiusControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,13 @@ using PanelSupplierControl;
 using PanelBanHangControl;
 using PanelSanPhamControl;
 using PanelCustomerControl;
+using aura_skin.BUS;
+using Syncfusion.WinForms.DataGrid;
+using aura_skin.DAO;
+using Syncfusion.WinForms.DataGrid.Events;
+using Syncfusion.WinForms.ListView;
+using System.IO;
+
 
 
 namespace aura_skin
@@ -37,8 +44,16 @@ namespace aura_skin
         private PanelCustomer pnlCustomer;
         private PanelSale pnlSale;
         private PanelSupplier pnlSupplier;
-        
+
         #endregion
+
+        ProductBUS productBUS = new ProductBUS();
+        CategoriesBUS categoriesBUS = new CategoriesBUS();
+        SuppliersBUS suppliersBUS = new SuppliersBUS();
+
+        List<Category> categories = new List<Category>();
+        List<Supplier> suppliers = new List<Supplier>();
+        List<Product> products = new List<Product>();
 
         public frm_Main()
         {
@@ -58,6 +73,9 @@ namespace aura_skin
         {
             inits();
 
+            products = productBUS.products;
+            categories = categoriesBUS.categories;
+            suppliers = suppliersBUS.suppliers;
         }
 
         //Hover chuột ra ngoài sẽ hiển thị màu 64,64,64
@@ -211,6 +229,7 @@ namespace aura_skin
             //Clear các panel trước khi thêm panel mới
             //pnl_main.Controls.Clear();
             ClearPanelButKeepSpecificControls(pnl_main);
+            InitializeMainPanels();
 
             // Hiển thị panel tương ứng với nội dung nút
             switch (clickedButton.Text)
@@ -225,6 +244,7 @@ namespace aura_skin
                         pnlBanHang.TabIndex = 6;
                         pnl_main.Controls.Add(pnlBanHang);
                         setupBtnTitle();
+                        addControlsToBanHangPanel();
                     }
                     break;
                 case "Khuyến mãi":
@@ -249,6 +269,7 @@ namespace aura_skin
                         pnlSanPham.TabIndex = 6;
                         pnl_main.Controls.Add(pnlSanPham);
                         setupBtnTitle();
+                        addControlsToProductsPanel();
                     }
                     break;
                 case "Hóa đơn":
@@ -323,6 +344,169 @@ namespace aura_skin
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void addControlsToBanHangPanel()
+        {
+            pnlBanHang.ControlsDictionary["btnGoiYSanPham"].Click += btnGoiYSanPham_Click;
+        }
+
+        private void addControlsToProductsPanel()
+        {
+            #region Load dữ liệu vào table Products
+            // Lấy SfDataGrid từ ControlsDictionary
+            var dtgProducts = pnlSanPham.ControlsDictionary["dtgDsSP"] as SfDataGrid;
+           if (dtgProducts!=null)
+            {
+                dtgProducts.AutoGenerateColumns = false;
+                // Gán DataSource
+                dtgProducts.DataSource = products;
+            }
+            else
+            {
+                MessageBox.Show("Không thể load dữ liệu Products");
+            }
+            #endregion
+
+            #region Load dữ liệu vào combobox categories
+            // Gán dữ liệu vào ComboBox
+            var cboLoaiSP = pnlSanPham.ControlsDictionary["cboLoaiSP"] as SfComboBox;
+            cboLoaiSP.DataSource = categories;
+            cboLoaiSP.DisplayMember = "category_name"; // Hiển thị tên trong ComboBox
+            cboLoaiSP.ValueMember = "id_category"; // Gán giá trị của Id vào ComboBox
+
+            //Gán giá trị mặc định là chưa select
+            cboLoaiSP.SelectedIndex = -1;
+            #endregion
+
+            #region Load dữ liệu vào combobox suppliers
+            // Gán dữ liệu vào ComboBox
+            var cboSuppler = pnlSanPham.ControlsDictionary["cboSupplier"] as SfComboBox;
+            cboSuppler.DataSource = suppliers;
+            cboSuppler.DisplayMember = "supplier_name"; // Hiển thị tên trong ComboBox
+            cboSuppler.ValueMember = "id_supplier"; // Gán giá trị của Id vào ComboBox
+
+            //Gán giá trị mặc định là chưa select
+            cboSuppler.SelectedIndex = -1;
+            #endregion
+
+            pnlSanPham.ControlsDictionary["btnAddImage"].Click += btnSelectImageProduct_Click;
+
+            dtgProducts.CurrentCellActivated += dtgProducts_CurrentCellActivated;
+        }
+        private void dtgProducts_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
+        {
+            var sfDataGrid = sender as SfDataGrid;
+            if (sfDataGrid != null && sfDataGrid.CurrentItem != null)
+            {
+                // Lấy đối tượng của hàng hiện tại
+                var selectedRow = sfDataGrid.CurrentItem;
+
+                // Lấy giá trị của cột đầu tiên (MappingName phải khớp)
+                var firstCellValue = selectedRow.GetType().GetProperty(sfDataGrid.Columns[0].MappingName)?.GetValue(selectedRow, null);
+
+                if (firstCellValue != null)
+                {
+                    Product product = new Product();
+                    product=productBUS.GetProductByID(firstCellValue.ToString());
+                    pnlSanPham.ControlsDictionary["txtMaSP"].Text = product.id_product;
+                    pnlSanPham.ControlsDictionary["txtTenSP"].Text = product.product_name;
+
+                    // Tìm Category có Id tương ứng 
+                    var cboLoaiSP = pnlSanPham.ControlsDictionary["cboLoaiSP"] as SfComboBox;
+                    cboLoaiSP.SelectedValue = product.id_category;
+
+                    // Tìm Supplier có Id tương ứng 
+                    var cboSupplier = pnlSanPham.ControlsDictionary["cboSupplier"] as SfComboBox;
+                    cboSupplier.SelectedValue = product.id_supplier;
+
+                    pnlSanPham.ControlsDictionary["txtTrangThai"].Text = product.is_active.ToString();
+                    pnlSanPham.ControlsDictionary["txtDonGia"].Text = product.default_price.ToString();
+
+                    if(product.default_image!= null&&product.default_image!="")
+                    {
+                        #region Thêm hình ảnh vào panel
+                        // Tạo PictureBox và thêm vào Panel
+                        PictureBox pictureBox = new PictureBox();
+                        pictureBox.Dock = DockStyle.Fill;  // Hoặc bạn có thể sử dụng các giá trị như Top, Left để định vị
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;  // Hoặc sử dụng các giá trị khác như CenterImage, Zoom, etc.
+
+                        // Tải hình ảnh vào PictureBox
+                        pictureBox.Image = Image.FromFile("../../../image/Product/" + product.default_image); // Đảm bảo đường dẫn đúng đến ảnh của bạn
+
+                        // Thêm PictureBox vào Panel
+                        pnlSanPham.ControlsDictionary["pnlImageSP"].Controls.Add(pictureBox);
+                        #endregion
+                    }
+                    else
+                    {
+                        pnlSanPham.ControlsDictionary["pnlImageSP"].Refresh();
+                    }    
+                }
+                else
+                {
+                    MessageBox.Show("Không thể lấy giá trị ô đầu tiên.");
+                }
+            }
+        }
+
+        private void btnSelectImageProduct_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            openFileDialog.Title = "Chọn ảnh";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFile = openFileDialog.FileName;
+
+                // Xác định đường dẫn lưu ảnh trong thư mục Images trong dự án
+                string targetDirectory = Path.Combine(Application.StartupPath, "../../../image/Product");
+
+                // Nếu thư mục chưa tồn tại, tạo mới
+                if (!Directory.Exists(targetDirectory))
+                {
+                    Directory.CreateDirectory(targetDirectory);
+                }
+
+                // Lấy tên file và đường dẫn mới
+                string fileName = Path.GetFileName(selectedFile); // Lấy tên file (không bao gồm đường dẫn)
+                // Lấy tên file và đường dẫn mới
+                string targetFilePath = Path.Combine(targetDirectory, fileName);
+
+                bool check = File.Exists("../../../image/Product/" + fileName);
+                if (selectedFile.Contains("AuraSkin\\image\\Product\\") && File.Exists("../../../image/Product/" + fileName))
+                {
+                    // Hiển thị thông báo lỗi hoặc sử dụng ảnh mặc định
+                    MessageBox.Show("Đường dẫn này có thể gây lỗi!");
+                    return;
+                }
+                else
+                {
+                    // Sao chép file vào thư mục trong dự án
+                    File.Copy(selectedFile, targetFilePath, true);
+                }
+
+                // Hiển thị đường dẫn hoặc làm gì đó với file ảnh
+                MessageBox.Show("Ảnh đã được lưu thành công!");
+
+                //Load ảnh vào pnlImageProduct
+                PictureBox pictureBox = new PictureBox();
+                // Tải hình ảnh vào PictureBox
+                pictureBox.Image = Image.FromFile(targetFilePath); // Đảm bảo đường dẫn đúng đến ảnh của bạn
+                // Thêm PictureBox vào Panel
+                pnlSanPham.ControlsDictionary["pnlImageSP"].Controls.Add(pictureBox);
+
+                //Lưu vào BUS
+                string id = pnlSanPham.ControlsDictionary["txtMaSP"].Text;
+                productBUS.UpdateImageProduct(id, fileName);
+            }
+        }
+        private void btnGoiYSanPham_Click(object sender, EventArgs e) 
+        {
+            var btnGoiY=sender as Button;
+            frmGoiYSanPham frm_goiYSP=new frmGoiYSanPham();
+            frm_goiYSP.Show();
+        }
 
     }
 }

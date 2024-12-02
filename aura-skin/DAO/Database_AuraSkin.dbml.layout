@@ -1,148 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 13.125" name="Database_AuraSkin">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 13.125" name="Database_AuraSkin">
   <DataContextMoniker Name="/Database_AuraSkinDataContext" />
   <nestedChildShapes>
-    <classShape Id="eed0488b-3be6-4cc0-a97b-053e2d444cef" absoluteBounds="3.5, 9, 2, 1.3862939453124987">
+    <classShape Id="84fe7c09-f6b1-479f-b642-a21ca29da429" absoluteBounds="3.5, 9, 2, 1.3862939453124987">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/Category" />
       <nestedChildShapes>
-        <elementListCompartment Id="0c8d02a7-b659-41d7-954a-6708f2bc6c0a" absoluteBounds="3.515, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1aa97497-df8b-493f-8c56-65c6c692764c" absoluteBounds="3.515, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d1f7b62c-c38b-4b02-95a6-e39d832609e3" absoluteBounds="11.75, 6.125, 2, 1.7708968098958326">
-      <DataClassMoniker Name="/Database_AuraSkinDataContext/Consignment" />
-      <nestedChildShapes>
-        <elementListCompartment Id="88ada1ef-a9a2-4645-a0aa-87c5f8b25e2b" absoluteBounds="11.765, 6.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c7a06e40-1fc6-40e3-be0b-933a6d981f13" absoluteBounds="0.75, 6.875, 2, 2.5401025390625005">
+    <classShape Id="e7680df5-979f-4fdf-877b-2b216189d370" absoluteBounds="0.75, 6.875, 2, 2.5401025390624987">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/CustomerInfo" />
       <nestedChildShapes>
-        <elementListCompartment Id="62cbe734-4872-4fe3-b900-5e8afc4378be" absoluteBounds="0.765, 7.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d281ce8b-76bf-41db-b8b3-11875f313116" absoluteBounds="0.765, 7.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f8145673-ea3b-4ef2-8916-9ffe5e1fa12a" absoluteBounds="11.75, 3.75, 2, 1.3862939453125005">
+    <classShape Id="09d86bde-fc14-4b41-b7e0-442054598f2b" absoluteBounds="9, 5, 2, 1.3862939453125005">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/OrderItem" />
       <nestedChildShapes>
-        <elementListCompartment Id="369c921f-cd91-4453-9366-3ad52050a538" absoluteBounds="11.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6ce7db25-29de-4577-addc-e0dcf2a67da8" absoluteBounds="9.015, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4bd0bd8f-de6e-460a-9699-9bfb6cd34a93" absoluteBounds="3.5, 3, 2, 2.1554996744791675">
+    <classShape Id="4acda4f0-1723-4cad-adc0-b7aeef106ed6" absoluteBounds="3.5, 3, 2, 2.1554996744791666">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/Order" />
       <nestedChildShapes>
-        <elementListCompartment Id="b0d1631f-8a03-4ba9-ab2b-75d9abbe3d2f" absoluteBounds="3.515, 3.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b69a1c6c-7845-4687-bd8d-fe1762612933" absoluteBounds="3.515, 3.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a978a75b-3b33-4bce-93f2-039cf805d39e" absoluteBounds="6.25, 5.75, 2, 2.5401025390624996">
+    <classShape Id="18b45d5b-22f8-4658-86f2-51a7b4db6f33" absoluteBounds="6.25, 5.625, 2, 2.7324039713541648">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/Product" />
       <nestedChildShapes>
-        <elementListCompartment Id="2063ec75-0ac4-4bf2-8caa-846e7450c373" absoluteBounds="6.265, 6.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6d76add0-6e8d-4463-a113-23d4162c1369" absoluteBounds="6.265, 6.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="55af1ebd-51ec-429f-83db-bba50e684822" absoluteBounds="9, 6, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/Database_AuraSkinDataContext/ProductVariant" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f1a9eade-1fdc-4438-9e86-03718d2121c0" absoluteBounds="9.015, 6.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e4c563e3-5a07-412f-bb44-e30be30a7ce2" absoluteBounds="3.5, 5.875, 2, 2.1554996744791666">
+    <classShape Id="54944104-3d74-48b9-8eef-d1abd24fe845" absoluteBounds="3.5, 5.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/Sale" />
       <nestedChildShapes>
-        <elementListCompartment Id="9a7b8734-f26e-44e8-ba63-7d2d777a690a" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="eea329ec-8d47-4b84-998f-337906425ff8" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9d6a532d-b7df-42aa-8d88-65b5446a9631" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+    <classShape Id="8c1c1076-d473-4fac-bfc4-79db238bed8d" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/StatusOrder" />
       <nestedChildShapes>
-        <elementListCompartment Id="145e3da3-eb8d-4797-9542-13b5e8ae11ec" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e554204d-b850-4412-a791-9c62dd96e743" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="014475df-a736-4478-ba42-ae60effb6bd2" absoluteBounds="3.5, 11.125, 2, 1.7708968098958344">
+    <classShape Id="b4b0a29c-f5d5-4a20-8c6e-113db0b93f2c" absoluteBounds="3.5, 11.125, 2, 1.7708968098958344">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/Supplier" />
       <nestedChildShapes>
-        <elementListCompartment Id="ac0a4daf-b9e6-4d62-9af2-c87890c6f81d" absoluteBounds="3.515, 11.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c6f7ab91-3601-4061-b9d2-28f1c9c3d545" absoluteBounds="3.515, 11.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="26233a80-339b-476e-9a32-35f622b70479" absoluteBounds="0.75, 2.875, 2, 2.3478011067708335">
+    <classShape Id="ff823d23-eba7-4ff0-81b5-80af2927e485" absoluteBounds="0.75, 2.875, 2, 2.3478011067708335">
       <DataClassMoniker Name="/Database_AuraSkinDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="5b757788-338e-4b9f-9f8f-9a709e6b6e3c" absoluteBounds="0.765, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="66692d4c-9f84-49fc-ab0d-7c7805b3f2f1" absoluteBounds="0.765, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 4.44314697265625); (11.75 : 4.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.9999995); (10 : 3.9999995); (10 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/Order/Order_OrderItem" />
       <nodes>
-        <classShapeMoniker Id="4bd0bd8f-de6e-460a-9699-9bfb6cd34a93" />
-        <classShapeMoniker Id="f8145673-ea3b-4ef2-8916-9ffe5e1fa12a" />
+        <classShapeMoniker Id="4acda4f0-1723-4cad-adc0-b7aeef106ed6" />
+        <classShapeMoniker Id="09d86bde-fc14-4b41-b7e0-442054598f2b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 6.87653746153846); (3.125 : 6.50153746153846); (3.125 : 4.07774983723958); (3.5 : 4.07774983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/CustomerInfo/CustomerInfo_Order" />
       <nodes>
-        <classShapeMoniker Id="c7a06e40-1fc6-40e3-be0b-933a6d981f13" />
-        <classShapeMoniker Id="4bd0bd8f-de6e-460a-9699-9bfb6cd34a93" />
+        <classShapeMoniker Id="e7680df5-979f-4fdf-877b-2b216189d370" />
+        <classShapeMoniker Id="4acda4f0-1723-4cad-adc0-b7aeef106ed6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.69314697265625); (6.63541416666667 : 9.69314697265625 : JumpStart); (6.80208083333333 : 9.69314697265625 : JumpEnd); (7.25 : 9.69314697265625); (7.25 : 8.2901025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 6.00564697265625); (9 : 6.00564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Database_AuraSkinDataContext/Product/Product_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="18b45d5b-22f8-4658-86f2-51a7b4db6f33" />
+        <classShapeMoniker Id="09d86bde-fc14-4b41-b7e0-442054598f2b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.69314697265625); (6.63541416666667 : 9.69314697265625 : JumpStart); (6.80208083333333 : 9.69314697265625 : JumpEnd); (7.25 : 9.69314697265625); (7.25 : 8.35740397135416)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/Category/Category_Product" />
       <nodes>
-        <classShapeMoniker Id="eed0488b-3be6-4cc0-a97b-053e2d444cef" />
-        <classShapeMoniker Id="a978a75b-3b33-4bce-93f2-039cf805d39e" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11 : 7.01044840494792); (11.75 : 7.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Database_AuraSkinDataContext/ProductVariant/ProductVariant_Consignment" />
-      <nodes>
-        <classShapeMoniker Id="55af1ebd-51ec-429f-83db-bba50e684822" />
-        <classShapeMoniker Id="d1f7b62c-c38b-4b02-95a6-e39d832609e3" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10 : 6); (10 : 4.82097295898438); (11.75 : 4.82097295898438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Database_AuraSkinDataContext/ProductVariant/ProductVariant_OrderItem" />
-      <nodes>
-        <classShapeMoniker Id="55af1ebd-51ec-429f-83db-bba50e684822" />
-        <classShapeMoniker Id="f8145673-ea3b-4ef2-8916-9ffe5e1fa12a" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 6.98159912109375); (9 : 6.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Database_AuraSkinDataContext/Product/Product_ProductVariant" />
-      <nodes>
-        <classShapeMoniker Id="a978a75b-3b33-4bce-93f2-039cf805d39e" />
-        <classShapeMoniker Id="55af1ebd-51ec-429f-83db-bba50e684822" />
+        <classShapeMoniker Id="84fe7c09-f6b1-479f-b642-a21ca29da429" />
+        <classShapeMoniker Id="18b45d5b-22f8-4658-86f2-51a7b4db6f33" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 6.95274983723958); (6.25 : 6.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/Sale/Sale_Product" />
       <nodes>
-        <classShapeMoniker Id="e4c563e3-5a07-412f-bb44-e30be30a7ce2" />
-        <classShapeMoniker Id="a978a75b-3b33-4bce-93f2-039cf805d39e" />
+        <classShapeMoniker Id="54944104-3d74-48b9-8eef-d1abd24fe845" />
+        <classShapeMoniker Id="18b45d5b-22f8-4658-86f2-51a7b4db6f33" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 1.44314697265625); (4.5 : 1.44314697265625); (4.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/StatusOrder/StatusOrder_Order" />
       <nodes>
-        <classShapeMoniker Id="9d6a532d-b7df-42aa-8d88-65b5446a9631" />
-        <classShapeMoniker Id="4bd0bd8f-de6e-460a-9699-9bfb6cd34a93" />
+        <classShapeMoniker Id="8c1c1076-d473-4fac-bfc4-79db238bed8d" />
+        <classShapeMoniker Id="4acda4f0-1723-4cad-adc0-b7aeef106ed6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 12.0104484049479); (6.7187475 : 12.0104484049479); (6.7187475 : 8.2901025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 12.0104484049479); (6.7187475 : 12.0104484049479); (6.7187475 : 8.35740397135416)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/Supplier/Supplier_Product" />
       <nodes>
-        <classShapeMoniker Id="014475df-a736-4478-ba42-ae60effb6bd2" />
-        <classShapeMoniker Id="a978a75b-3b33-4bce-93f2-039cf805d39e" />
+        <classShapeMoniker Id="b4b0a29c-f5d5-4a20-8c6e-113db0b93f2c" />
+        <classShapeMoniker Id="18b45d5b-22f8-4658-86f2-51a7b4db6f33" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 3.47637491861979); (3.5 : 3.47637491861979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/User/User_Order" />
       <nodes>
-        <classShapeMoniker Id="26233a80-339b-476e-9a32-35f622b70479" />
-        <classShapeMoniker Id="4bd0bd8f-de6e-460a-9699-9bfb6cd34a93" />
+        <classShapeMoniker Id="ff823d23-eba7-4ff0-81b5-80af2927e485" />
+        <classShapeMoniker Id="4acda4f0-1723-4cad-adc0-b7aeef106ed6" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 5.16126164523237); (3.06607443490112 : 5.47733608013349 : JumpStart); (3.18392556509888 : 5.59518721033125 : JumpEnd); (3.3125 : 5.72376164523237); (3.3125 : 6.95274983723958); (3.5 : 6.95274983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/Database_AuraSkinDataContext/User/User_Sale" />
       <nodes>
-        <classShapeMoniker Id="26233a80-339b-476e-9a32-35f622b70479" />
-        <classShapeMoniker Id="e4c563e3-5a07-412f-bb44-e30be30a7ce2" />
+        <classShapeMoniker Id="ff823d23-eba7-4ff0-81b5-80af2927e485" />
+        <classShapeMoniker Id="54944104-3d74-48b9-8eef-d1abd24fe845" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
