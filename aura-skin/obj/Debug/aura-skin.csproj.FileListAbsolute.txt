@@ -62,3 +62,5 @@ C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Deskt
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\aura-skin\obj\Debug\aura-skin.pdb
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\aura-skin\bin\Debug\PanelCustomerControl.dll
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\aura-skin\bin\Debug\PanelCustomerControl.pdb
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\aura-skin\obj\Debug\aura_skin.frmGoiYSanPham.resources
+C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\aura-skin\obj\Debug\aura_skin.frm_Customer.resources

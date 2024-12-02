@@ -14,5 +14,9 @@ namespace aura_skin.DAO
         {
             return db.Users.ToList();
         }
+        public User GetUserByID(string id)
+        {
+            return db.Users.FirstOrDefault(l => l.id_user == id);
+        }
     }
 }

@@ -8,10 +8,10 @@ go
 -- Bảng Users (Người dùng)
 CREATE TABLE Users (
     id_user VARCHAR(10) PRIMARY KEY,
-	username VARCHAR(50) UNIQUE NOT NULL,
-	password VARCHAR(50),
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(50),
     full_name NVARCHAR(255),
-    gender NVARCHAR(10) CHECK (gender IN (N'Nam',N'Nữ')),
+    gender NVARCHAR(10) CHECK (gender IN (N'Nam', N'Nữ')),
     phone_number NVARCHAR(20),
     email NVARCHAR(255),
     address NVARCHAR(MAX)
@@ -48,32 +48,14 @@ CREATE TABLE Sale (
 CREATE TABLE Products (
     id_product VARCHAR(10) PRIMARY KEY,
     id_category VARCHAR(10) FOREIGN KEY REFERENCES Categories(id_category),
-    id_supplier VARCHAR(10) FOREIGN KEY REFERENCES Supplier(id_supplier), -- Nhà cung cấp chính
-	id_sale VARCHAR(10) FOREIGN KEY REFERENCES Sale(id_sale), --Sale trên sản phẩm
+    id_supplier VARCHAR(10) FOREIGN KEY REFERENCES Supplier(id_supplier),
+    id_sale VARCHAR(10) FOREIGN KEY REFERENCES Sale(id_sale),
     product_name NVARCHAR(255) UNIQUE NOT NULL,
     default_price DECIMAL(18, 2) NOT NULL,
-    description NVARCHAR(MAX), -- Mô tả sản phẩm
-    default_image NVARCHAR(MAX), -- Ảnh mặc định
-    is_active BIT NOT NULL DEFAULT 1
-);
-
--- Bảng Product Variants (Biến thể sản phẩm)
-CREATE TABLE ProductVariants (
-    id_product_variant VARCHAR(10) PRIMARY KEY,
-    id_product VARCHAR(10) FOREIGN KEY REFERENCES Products(id_product),
-    variant_name NVARCHAR(255) UNIQUE NOT NULL,
     description NVARCHAR(MAX),
-    is_active BIT NOT NULL DEFAULT 1,
-    thumbnail NVARCHAR(MAX)
-);
-
--- Bảng Consignments (Lô hàng)
-CREATE TABLE Consignments (
-    id_consignment VARCHAR(10) PRIMARY KEY,
-    id_product_variant VARCHAR(10) FOREIGN KEY REFERENCES ProductVariants(id_product_variant),
-    price DECIMAL(18, 2) NOT NULL, -- Giá nhập cho lô hàng
-    expiration_date DATE, -- Ngày hết hạn của lô hàng
-    stock_quantity INT NOT NULL CHECK (stock_quantity >= 0) -- Số lượng tồn kho
+    default_image NVARCHAR(MAX),
+    stock_quantity INT NOT NULL CHECK (stock_quantity >= 0), -- Quản lý số lượng tồn kho trực tiếp
+    is_active BIT NOT NULL DEFAULT 1
 );
 
 -- Bảng Status Order (Trạng thái đơn hàng)
@@ -87,7 +69,7 @@ CREATE TABLE StatusOrder (
 CREATE TABLE CustomerInfo (
     id_customer_info VARCHAR(10) PRIMARY KEY,
     customer_name NVARCHAR(255),
-    gender NVARCHAR(10) CHECK (gender IN (N'Nam',N'Nữ')),
+    gender NVARCHAR(10) CHECK (gender IN (N'Nam', N'Nữ')),
     contact_number NVARCHAR(20),
     address_line NVARCHAR(255),
     ward NVARCHAR(255),
@@ -104,21 +86,21 @@ CREATE TABLE Orders (
     create_at DATETIME NOT NULL DEFAULT GETDATE(),
     delivery_fee DECIMAL(18, 2) DEFAULT 0,
     total_amount DECIMAL(18, 2) NOT NULL,
-    customer_info VARCHAR(10) FOREIGN KEY REFERENCES CustomerInfo (id_customer_info) -- Thông tin khách hàng
+    customer_info VARCHAR(10) FOREIGN KEY REFERENCES CustomerInfo (id_customer_info)
 );
 
 -- Bảng Order Items (Chi tiết đơn hàng)
 CREATE TABLE OrderItems (
     id_order VARCHAR(10) FOREIGN KEY REFERENCES Orders(id_order),
-    id_product_variant VARCHAR(10) FOREIGN KEY REFERENCES ProductVariants(id_product_variant),
+    id_product VARCHAR(10) FOREIGN KEY REFERENCES Products(id_product),
     quantity INT NOT NULL CHECK (quantity > 0),
-    PRIMARY KEY (id_order, id_product_variant)
+    PRIMARY KEY (id_order, id_product)
 );
 
-
+-- Tạo các chỉ mục
 CREATE INDEX idx_product_name ON Products (product_name);
-CREATE INDEX idx_variant_name ON ProductVariants (variant_name);
 CREATE INDEX idx_order_user ON Orders (id_user);
+
 
 
 INSERT INTO Users (id_user, username, password, full_name, gender, phone_number, email, address)
@@ -157,31 +139,13 @@ VALUES
 ('SAL005', 'USR005', N'Giảm giá cuối năm', '2024-12-20', '2024-12-31', 25, 1);
 
 
-INSERT INTO Products (id_product, id_category, id_supplier, id_sale, product_name, default_price, description, default_image, is_active)
+INSERT INTO Products (id_product, id_category, id_supplier, id_sale, product_name, default_price, description, default_image, stock_quantity, is_active)
 VALUES
-('PRO001', 'CAT001', 'SUP001', 'SAL001', N'Cây lược vàng', 50000, N'Dùng để chữa bệnh xương khớp', NULL, 1),
-('PRO002', 'CAT002', 'SUP002', 'SAL002', N'Nghệ đen', 150000, N'Tăng cường sức đề kháng', NULL, 1),
-('PRO003', 'CAT003', 'SUP003', 'SAL003', N'Mặt nạ bơ', 80000, N'Dưỡng da hiệu quả', NULL, 1),
-('PRO004', 'CAT004', 'SUP004', NULL, N'Tinh dầu quế', 120000, N'Tăng cường lưu thông khí huyết', NULL, 1),
-('PRO005', 'CAT005', 'SUP005', NULL, N'Trái cây sấy thập cẩm', 60000, N'Thực phẩm tiện dụng và bổ dưỡng', NULL, 1);
-
-
-INSERT INTO ProductVariants (id_product_variant, id_product, variant_name, description, is_active, thumbnail)
-VALUES
-('VAR001', 'PRO001', N'Lược vàng - Loại nhỏ', N'100g', 1, NULL),
-('VAR002', 'PRO002', N'Nghệ đen - Hộp 200g', N'200g', 1, NULL),
-('VAR003', 'PRO003', N'Mặt nạ bơ - Loại 50g', N'50g', 1, NULL),
-('VAR004', 'PRO004', N'Tinh dầu quế - 100ml', N'100ml', 1, NULL),
-('VAR005', 'PRO005', N'Trái cây sấy - 500g', N'500g', 1, NULL);
-
-
-INSERT INTO Consignments (id_consignment, id_product_variant, price, expiration_date, stock_quantity)
-VALUES
-('CON001', 'VAR001', 45000, '2025-01-01', 100),
-('CON002', 'VAR002', 140000, '2025-06-01', 200),
-('CON003', 'VAR003', 75000, '2025-03-01', 150),
-('CON004', 'VAR004', 110000, '2025-08-01', 50),
-('CON005', 'VAR005', 55000, '2025-12-01', 80);
+('PRO001', 'CAT001', 'SUP001', 'SAL001', N'Cây lược vàng', 50000, N'Dùng để chữa bệnh xương khớp', NULL, 100, 1),
+('PRO002', 'CAT002', 'SUP002', 'SAL002', N'Nghệ đen', 150000, N'Tăng cường sức đề kháng', NULL, 50, 1),
+('PRO003', 'CAT003', 'SUP003', 'SAL003', N'Mặt nạ bơ', 80000, N'Dưỡng da hiệu quả', NULL, 200, 1),
+('PRO004', 'CAT004', 'SUP004', NULL, N'Tinh dầu quế', 120000, N'Tăng cường lưu thông khí huyết', NULL, 80, 1),
+('PRO005', 'CAT005', 'SUP005', NULL, N'Trái cây sấy thập cẩm', 60000, N'Thực phẩm tiện dụng và bổ dưỡng', NULL, 150, 1);
 
 
 INSERT INTO StatusOrder (id_status, status_name, is_active)
@@ -210,10 +174,11 @@ VALUES
 ('ORD005', 'USR005', 'STA005', '2024-01-09', 0, 50000, 'CUS005');
 
 
-INSERT INTO OrderItems (id_order, id_product_variant, quantity)
+INSERT INTO OrderItems (id_order, id_product, quantity)
 VALUES
-('ORD001', 'VAR001', 2),
-('ORD002', 'VAR002', 1),
-('ORD003', 'VAR003', 3),
-('ORD004', 'VAR004', 1),
-('ORD005', 'VAR005', 2);
+('ORD001', 'PRO001', 2),
+('ORD002', 'PRO002', 1),
+('ORD003', 'PRO003', 3),
+('ORD004', 'PRO004', 1),
+('ORD005', 'PRO005', 2);
+

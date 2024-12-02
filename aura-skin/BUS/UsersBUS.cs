@@ -19,9 +19,9 @@ namespace aura_skin.BUS
         {
             this.users=usersDAO.GetUsersList();
         }
-        public void GetUserByID(int id)
+        public User GetUserByID(string id)
         {
-
+            return usersDAO.GetUserByID(id);
         }
     }
 }
