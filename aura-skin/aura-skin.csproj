@@ -120,11 +120,13 @@
   <ItemGroup>
     <Compile Include="BUS\CategoriesBUS.cs" />
     <Compile Include="BUS\ProductBUS.cs" />
+    <Compile Include="BUS\RolesBUS.cs" />
     <Compile Include="BUS\SuppliersBUS.cs" />
     <Compile Include="BUS\UsersBUS.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\ConnectionManager.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="DAO\RolesDAO.cs" />
     <Compile Include="DAO\SuppliersDAO.cs" />
     <Compile Include="DAO\UsersDAO.cs" />
     <Compile Include="DAO\Database_AuraSkin.cs">
