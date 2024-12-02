@@ -15,11 +15,11 @@
       "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\bus\\usersbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\bus\\usersbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\bus\\usersbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|c:\\users\\acer\\onedrive - ho chi minh city university of industry and trade\\desktop\\auraskin\\aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{20ED6B91-9424-490D-B26D-29A10E35D993}|aura-skin\\aura-skin.csproj|solutionrelative:aura-skin\\frm_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -110,8 +110,7 @@
               "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Login.cs [Design]",
               "RelativeToolTip": "aura-skin\\frm_Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T19:36:23.364Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-01T19:36:23.364Z"
             },
             {
               "$type": "Document",
@@ -123,8 +122,7 @@
               "RelativeToolTip": "aura-skin\\BUS\\UsersBUS.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAcwAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T19:09:38.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T19:09:38.901Z"
             },
             {
               "$type": "Document",
@@ -136,8 +134,7 @@
               "RelativeToolTip": "aura-skin\\DAO\\UsersDAO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T18:18:53.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T18:18:53.885Z"
             },
             {
               "$type": "Document",
@@ -148,8 +145,7 @@
               "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\frm_Main.cs [Design]",
               "RelativeToolTip": "aura-skin\\frm_Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T01:16:12.939Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-22T01:16:12.939Z"
             },
             {
               "$type": "Document",
@@ -161,8 +157,7 @@
               "RelativeToolTip": "aura-skin\\frm_Main.cs",
               "ViewState": "AQIAAFAAAAAAAAAAAAAqwHEAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T01:20:21.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T01:20:21.758Z"
             },
             {
               "$type": "Document",
@@ -174,8 +169,7 @@
               "RelativeToolTip": "aura-skin\\DAO\\Database_AuraSkin.designer.cs",
               "ViewState": "AQIAAFoKAAAAAAAAAAAgwFIKAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:42:42.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T14:42:42.443Z"
             },
             {
               "$type": "Document",
@@ -187,8 +181,7 @@
               "RelativeToolTip": "aura-skin\\DAO\\ConnectionManager.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAYwCQAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:52:01.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T14:52:01.078Z"
             },
             {
               "$type": "Document",
@@ -199,8 +192,7 @@
               "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\DAO\\Database_AuraSkin.dbml",
               "RelativeToolTip": "aura-skin\\DAO\\Database_AuraSkin.dbml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2024-12-01T14:42:27.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T14:42:27.38Z"
             },
             {
               "$type": "Document",
@@ -211,8 +203,7 @@
               "ToolTip": "C:\\Users\\acer\\OneDrive - Ho Chi Minh city University of Industry and Trade\\Desktop\\AuraSkin\\aura-skin\\Properties\\Settings.settings",
               "RelativeToolTip": "aura-skin\\Properties\\Settings.settings",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2024-12-01T18:48:08.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T18:48:08.051Z"
             },
             {
               "$type": "Document",
@@ -248,8 +239,7 @@
               "RelativeToolTip": "aura-skin\\App.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-12-01T14:49:42.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T14:49:42.805Z"
             },
             {
               "$type": "Document",
