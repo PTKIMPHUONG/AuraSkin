@@ -45,6 +45,9 @@ namespace aura_skin.DAO
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertRole(Role instance);
+    partial void UpdateRole(Role instance);
+    partial void DeleteRole(Role instance);
     partial void InsertSale(Sale instance);
     partial void UpdateSale(Sale instance);
     partial void DeleteSale(Sale instance);
@@ -126,6 +129,14 @@ namespace aura_skin.DAO
 			get
 			{
 				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Role> Roles
+		{
+			get
+			{
+				return this.GetTable<Role>();
 			}
 		}
 		
@@ -1560,6 +1571,120 @@ namespace aura_skin.DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Roles")]
+	public partial class Role : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _id_role;
+		
+		private string _role_name;
+		
+		private EntitySet<User> _Users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_roleChanging(string value);
+    partial void Onid_roleChanged();
+    partial void Onrole_nameChanging(string value);
+    partial void Onrole_nameChanged();
+    #endregion
+		
+		public Role()
+		{
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_role", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id_role
+		{
+			get
+			{
+				return this._id_role;
+			}
+			set
+			{
+				if ((this._id_role != value))
+				{
+					this.Onid_roleChanging(value);
+					this.SendPropertyChanging();
+					this._id_role = value;
+					this.SendPropertyChanged("id_role");
+					this.Onid_roleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string role_name
+		{
+			get
+			{
+				return this._role_name;
+			}
+			set
+			{
+				if ((this._role_name != value))
+				{
+					this.Onrole_nameChanging(value);
+					this.SendPropertyChanging();
+					this._role_name = value;
+					this.SendPropertyChanged("role_name");
+					this.Onrole_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Users", ThisKey="id_role", OtherKey="id_role")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.Role = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.Role = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sale")]
 	public partial class Sale : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2181,9 +2306,15 @@ namespace aura_skin.DAO
 		
 		private string _address;
 		
+		private string _image_user;
+		
+		private string _id_role;
+		
 		private EntitySet<Order> _Orders;
 		
 		private EntitySet<Sale> _Sales;
+		
+		private EntityRef<Role> _Role;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2205,12 +2336,17 @@ namespace aura_skin.DAO
     partial void OnemailChanged();
     partial void OnaddressChanging(string value);
     partial void OnaddressChanged();
+    partial void Onimage_userChanging(string value);
+    partial void Onimage_userChanged();
+    partial void Onid_roleChanging(string value);
+    partial void Onid_roleChanged();
     #endregion
 		
 		public User()
 		{
 			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
 			this._Sales = new EntitySet<Sale>(new Action<Sale>(this.attach_Sales), new Action<Sale>(this.detach_Sales));
+			this._Role = default(EntityRef<Role>);
 			OnCreated();
 		}
 		
@@ -2374,6 +2510,50 @@ namespace aura_skin.DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image_user", DbType="NVarChar(MAX)")]
+		public string image_user
+		{
+			get
+			{
+				return this._image_user;
+			}
+			set
+			{
+				if ((this._image_user != value))
+				{
+					this.Onimage_userChanging(value);
+					this.SendPropertyChanging();
+					this._image_user = value;
+					this.SendPropertyChanged("image_user");
+					this.Onimage_userChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_role", DbType="VarChar(10)")]
+		public string id_role
+		{
+			get
+			{
+				return this._id_role;
+			}
+			set
+			{
+				if ((this._id_role != value))
+				{
+					if (this._Role.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_roleChanging(value);
+					this.SendPropertyChanging();
+					this._id_role = value;
+					this.SendPropertyChanged("id_role");
+					this.Onid_roleChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Order", Storage="_Orders", ThisKey="id_user", OtherKey="id_user")]
 		public EntitySet<Order> Orders
 		{
@@ -2397,6 +2577,40 @@ namespace aura_skin.DAO
 			set
 			{
 				this._Sales.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Role", ThisKey="id_role", OtherKey="id_role", IsForeignKey=true)]
+		public Role Role
+		{
+			get
+			{
+				return this._Role.Entity;
+			}
+			set
+			{
+				Role previousValue = this._Role.Entity;
+				if (((previousValue != value) 
+							|| (this._Role.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Role.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._Role.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._id_role = value.id_role;
+					}
+					else
+					{
+						this._id_role = default(string);
+					}
+					this.SendPropertyChanged("Role");
+				}
 			}
 		}
 		

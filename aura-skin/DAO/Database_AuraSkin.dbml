@@ -64,6 +64,13 @@
       <Association Name="Supplier_Product" Member="Supplier" ThisKey="id_supplier" OtherKey="id_supplier" Type="Supplier" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="id_role" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_User" Member="Users" ThisKey="id_role" OtherKey="id_role" Type="User" />
+    </Type>
+  </Table>
   <Table Name="dbo.Sale" Member="Sales">
     <Type Name="Sale">
       <Column Name="id_sale" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -105,8 +112,11 @@
       <Column Name="phone_number" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="image_user" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_role" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="User_Order" Member="Orders" ThisKey="id_user" OtherKey="id_user" Type="Order" />
       <Association Name="User_Sale" Member="Sales" ThisKey="id_user" OtherKey="id_user" Type="Sale" />
+      <Association Name="Role_User" Member="Role" ThisKey="id_role" OtherKey="id_role" Type="Role" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

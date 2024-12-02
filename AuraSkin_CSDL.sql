@@ -5,6 +5,12 @@ go
 use AuraSkin
 go
 
+-- Bảng Roles (Quyền)
+CREATE TABLE Roles (
+	id_role VARCHAR(10) PRIMARY KEY,
+	role_name NVARCHAR(50) UNIQUE NOT NULL
+);
+
 -- Bảng Users (Người dùng)
 CREATE TABLE Users (
     id_user VARCHAR(10) PRIMARY KEY,
@@ -14,7 +20,9 @@ CREATE TABLE Users (
     gender NVARCHAR(10) CHECK (gender IN (N'Nam', N'Nữ')),
     phone_number NVARCHAR(20),
     email NVARCHAR(255),
-    address NVARCHAR(MAX)
+    address NVARCHAR(MAX),
+	image_user NVARCHAR(MAX),
+	id_role VARCHAR(10) FOREIGN KEY REFERENCES Roles(id_role)
 );
 
 -- Bảng Categories (Danh mục sản phẩm)
@@ -102,14 +110,18 @@ CREATE INDEX idx_product_name ON Products (product_name);
 CREATE INDEX idx_order_user ON Orders (id_user);
 
 
-
-INSERT INTO Users (id_user, username, password, full_name, gender, phone_number, email, address)
+INSERT INTO Roles (id_role, role_name)
 VALUES
-('USR001', 'admin', '123', N'Nguyễn Minh Hoàng', N'Nam', '0901234567', 'a@example.com', 'Hồ Chí Minh'),
-('USR002', 'nguyenthb', 'abcdef', N'Nguyễn Thị B', N'Nữ', '0907654321', 'b@example.com', 'Hà Nội'),
-('USR003', 'levanc', '123abc', N'Lê Văn C', N'Nam', '0912345678', 'c@example.com', 'Đà Nẵng'),
-('USR004', 'tranthid', 'pass123', N'Trần Thị D', N'Nữ', '0934567890', 'd@example.com', 'Cần Thơ'),
-('USR005', 'hoangvane', 'qwerty', N'Hoàng Văn E', N'Nam', '0923456789', 'e@example.com', 'Huế');
+('ROL001', N'Admin'),
+('ROL002', N'Nhân viên bán hàng');
+
+INSERT INTO Users (id_user, username, password, full_name, gender, phone_number, email, address, image_user, id_role)
+VALUES
+('USR001', 'admin', '123', N'Nguyễn Minh Hoàng', N'Nam', '0901234567', 'a@example.com', N'Hồ Chí Minh', NULL, 'ROL001'),
+('USR002', 'nguyenthb', 'abcdef', N'Nguyễn Thị B', N'Nữ', '0907654321', 'b@example.com', N'Hà Nội', NULL, 'ROL002'),
+('USR003', 'levanc', '123abc', N'Lê Văn C', N'Nam', '0912345678', 'c@example.com', N'Đà Nẵng', NULL, 'ROL002'),
+('USR004', 'tranthid', 'pass123', N'Trần Thị D', N'Nữ', '0934567890', 'd@example.com', N'Cần Thơ', NULL, 'ROL002'),
+('USR005', 'hoangvane', 'qwerty', N'Hoàng Văn E', N'Nam', '0923456789', 'e@example.com', N'Huế', NULL, 'ROL002');
 
 
 INSERT INTO Categories (id_category, category_name, is_active)

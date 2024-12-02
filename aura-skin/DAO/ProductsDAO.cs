@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,11 @@ namespace aura_skin.DAO
         {
             var prd = db.Products.FirstOrDefault(l => l.id_product == product.id_product);
             prd.default_image = product.default_image;
+            db.SubmitChanges();
+        }
+        public void AddProduct(Product product)
+        {
+            db.Products.InsertOnSubmit(product); 
             db.SubmitChanges();
         }
     }
