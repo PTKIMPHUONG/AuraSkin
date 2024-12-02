@@ -37,3 +37,42 @@ C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Deskt
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\GradientPanelRadiusControl\obj\Debug\Gradient.805D05E6.Up2Date
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.dll
 C:\Users\acer\OneDrive - Ho Chi Minh city University of Industry and Trade\Desktop\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.pdb
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\GradientPanelRadiusControl.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\GradientPanelRadiusControl.pdb
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Core.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Data.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.DataSource.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Grid.Base.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Grid.Windows.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.GridCommon.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Licensing.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SfDataGrid.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SfInput.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SfListView.WinForms.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Shared.Base.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Shared.Windows.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SpellChecker.Base.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Tools.Base.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Tools.Windows.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\System.Drawing.Common.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Core.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Data.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.DataSource.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Grid.Base.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Grid.Windows.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.GridCommon.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SfDataGrid.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SfInput.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SfListView.WinForms.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Shared.Base.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Shared.Windows.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.SpellChecker.Base.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Tools.Base.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\Syncfusion.Tools.Windows.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\System.Drawing.Common.pdb
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\bin\Debug\System.Drawing.Common.xml
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.csproj.AssemblyReference.cache
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.csproj.CoreCompileInputs.cache
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.csproj.CopyComplete
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.dll
+D:\KIMPHUONG\AURASKIN\AuraSkin\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.pdb
