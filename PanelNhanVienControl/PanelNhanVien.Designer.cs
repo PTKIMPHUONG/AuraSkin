@@ -37,6 +37,7 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.lbl_MaUser = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblFullName = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblAddress = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -185,31 +186,34 @@
             this.dtgDsNhanVien.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
             gridTextColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             gridTextColumn1.HeaderText = "Mã User";
-            gridTextColumn1.MappingName = "colMaUser";
+            gridTextColumn1.MappingName = "id_user";
             gridTextColumn2.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             gridTextColumn2.HeaderText = "UserName";
-            gridTextColumn2.MappingName = "colUsername";
+            gridTextColumn2.MappingName = "username";
             gridTextColumn3.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn3.HeaderText = "FullName";
-            gridTextColumn3.MappingName = "colFullName";
+            gridTextColumn3.HeaderText = "Password";
+            gridTextColumn3.MappingName = "password";
             gridTextColumn4.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn4.HeaderText = "Email";
-            gridTextColumn4.MappingName = "colEmail";
+            gridTextColumn4.HeaderText = "Full Name";
+            gridTextColumn4.MappingName = "full_name";
             gridTextColumn5.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn5.HeaderText = "Giới tính";
-            gridTextColumn5.MappingName = "colGioiTinh";
+            gridTextColumn5.HeaderText = "Email";
+            gridTextColumn5.MappingName = "email";
             gridTextColumn6.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn6.HeaderText = "SDT";
-            gridTextColumn6.MappingName = "colSDT";
+            gridTextColumn6.HeaderText = "Giới tính";
+            gridTextColumn6.MappingName = "gender";
             gridTextColumn7.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn7.HeaderText = "Address";
-            gridTextColumn7.MappingName = "colAddress";
+            gridTextColumn7.HeaderText = "SDT";
+            gridTextColumn7.MappingName = "phone_number";
             gridTextColumn8.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn8.HeaderText = "UserType";
-            gridTextColumn8.MappingName = "colUserType";
+            gridTextColumn8.HeaderText = "Address";
+            gridTextColumn8.MappingName = "address";
             gridTextColumn9.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn9.HeaderText = "ImageUser";
-            gridTextColumn9.MappingName = "colImageUser";
+            gridTextColumn9.HeaderText = "UserType";
+            gridTextColumn9.MappingName = "colUserType";
+            gridTextColumn10.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn10.HeaderText = "ImageUser";
+            gridTextColumn10.MappingName = "image_user";
             this.dtgDsNhanVien.Columns.Add(gridTextColumn1);
             this.dtgDsNhanVien.Columns.Add(gridTextColumn2);
             this.dtgDsNhanVien.Columns.Add(gridTextColumn3);
@@ -219,6 +223,7 @@
             this.dtgDsNhanVien.Columns.Add(gridTextColumn7);
             this.dtgDsNhanVien.Columns.Add(gridTextColumn8);
             this.dtgDsNhanVien.Columns.Add(gridTextColumn9);
+            this.dtgDsNhanVien.Columns.Add(gridTextColumn10);
             this.dtgDsNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.dtgDsNhanVien.Location = new System.Drawing.Point(3, 436);
             this.dtgDsNhanVien.Name = "dtgDsNhanVien";
@@ -335,7 +340,8 @@
             // 
             // pnlImageUser
             // 
-            this.pnlImageUser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlImageUser.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlImageUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlImageUser.Location = new System.Drawing.Point(1238, 131);
             this.pnlImageUser.Name = "pnlImageUser";
             this.pnlImageUser.Size = new System.Drawing.Size(250, 250);
