@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelOrdersControl", "Panel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelPhieuNhapControl", "PanelPhieuNhapControl\PanelPhieuNhapControl.csproj", "{E7F97B9F-2147-4C49-9780-D16FD6C20DC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelThongKeControl", "..\..\DoAnPTUNPMTM\AuraSkin\PanelThongKeControl\PanelThongKeControl.csproj", "{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{E7F97B9F-2147-4C49-9780-D16FD6C20DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7F97B9F-2147-4C49-9780-D16FD6C20DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7F97B9F-2147-4C49-9780-D16FD6C20DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +115,7 @@ Global
 		{C84DCDE3-7B93-4FD2-A3E5-1AB642AA1B05} = {6F9118C7-3B36-428F-AE82-34255D47BEB9}
 		{004D0B31-0159-4DEB-91E8-9640CA42D9AC} = {6F9118C7-3B36-428F-AE82-34255D47BEB9}
 		{E7F97B9F-2147-4C49-9780-D16FD6C20DC7} = {6F9118C7-3B36-428F-AE82-34255D47BEB9}
+		{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093} = {6F9118C7-3B36-428F-AE82-34255D47BEB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4451ADA1-07E0-447F-84B5-CC0DBE296547}
