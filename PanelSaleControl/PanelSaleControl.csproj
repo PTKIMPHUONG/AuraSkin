@@ -100,9 +100,6 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="PanelSale.resx">
       <DependentUpon>PanelSale.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +121,9 @@
       <Project>{1cbf2f01-352f-4311-8b77-d51b83fd6861}</Project>
       <Name>TabControlRadiusControl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

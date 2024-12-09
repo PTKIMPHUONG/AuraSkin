@@ -32,7 +32,7 @@ namespace aura_skin
     {
         public string Username;
         //string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm" };
-        string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Nhân viên", "Khách hàng", "Nhà cung cấp", "Phiếu nhập", "Thống kê", "Đăng xuất" };
+        string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê", "Đăng xuất" };
         string[] getSt1 = { "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê" };
         string[] getStLogOut = { "Đăng xuất" };
 
@@ -141,7 +141,7 @@ namespace aura_skin
                 GradientRadiusButton btnMenu = new GradientRadiusButton();
                 btnMenu.Text = getSt[i];
                 btnMenu.Width = 317;
-                btnMenu.Height = 65;
+                btnMenu.Height = 75;
                 btnMenu.Cursor = Cursors.Hand;
 
                 // Set vị trí nút

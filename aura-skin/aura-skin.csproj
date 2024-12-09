@@ -120,11 +120,8 @@
   <ItemGroup>
     <Compile Include="BUS\CategoriesBUS.cs" />
     <Compile Include="BUS\ProductBUS.cs" />
-<<<<<<< HEAD
     <Compile Include="BUS\RolesBUS.cs" />
-=======
     <Compile Include="BUS\RecommendationsBUS.cs" />
->>>>>>> main
     <Compile Include="BUS\SuppliersBUS.cs" />
     <Compile Include="BUS\UsersBUS.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
@@ -229,6 +226,14 @@
     <ProjectReference Include="..\PanelNhanVienControl\PanelNhanVienControl.csproj">
       <Project>{06fa2889-481c-439a-a965-1b889905c1fd}</Project>
       <Name>PanelNhanVienControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelOrdersControl\PanelOrdersControl.csproj">
+      <Project>{004d0b31-0159-4deb-91e8-9640ca42d9ac}</Project>
+      <Name>PanelOrdersControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelPhieuNhapControl\PanelPhieuNhapControl.csproj">
+      <Project>{e7f97b9f-2147-4c49-9780-d16fd6c20dc7}</Project>
+      <Name>PanelPhieuNhapControl</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

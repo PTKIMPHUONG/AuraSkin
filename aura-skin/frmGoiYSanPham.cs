@@ -64,7 +64,7 @@ namespace aura_skin
                 cboLoaiSP.Text = selectedProduct.id_category;
                 txtDonGia.Text = selectedProduct.default_price.ToString();
                 numudSoLuong.Value = selectedProduct.stock_quantity;
-                cboTrangThai.Text = selectedProduct.is_active == 1 ? "Đang hoạt động" : "Không hoạt động";
+                cboTrangThai.Text = selectedProduct.is_active == true ? "Đang hoạt động" : "Không hoạt động";
 
                 if (!string.IsNullOrEmpty(selectedProduct.default_image))
                 {
