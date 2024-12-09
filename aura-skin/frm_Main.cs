@@ -32,8 +32,8 @@ namespace aura_skin
     {
         public string Username;
         //string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm" };
-        string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê", "Đăng xuất" };
-        string[] getSt1 = { "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê" };
+        string[] getSt1 = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Khách hàng", "Nhà cung cấp","Thống kê" };
+        string[] getSt2 = { "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê" };
         string[] getStLogOut = { "Đăng xuất" };
 
 
@@ -51,6 +51,8 @@ namespace aura_skin
         CategoriesBUS categoriesBUS = new CategoriesBUS();
         SuppliersBUS suppliersBUS = new SuppliersBUS();
         UsersBUS usersBUS = new UsersBUS();
+        SalesBUS salesBUS = new SalesBUS();
+        RolesBUS rolesBUS = new RolesBUS();
         OrderBUS ordersBUS = new OrderBUS();
         CustomerInfoBUS customerInfoBUS = new CustomerInfoBUS();
 
@@ -59,6 +61,8 @@ namespace aura_skin
         List<Product> products = new List<Product>();
         List<Order> orders = new List<Order>();
         List<User> users = new List<User>();
+        List<Sale> sales= new List<Sale>();
+        List<Role> roles = new List<Role>();
         public frm_Main()
         {
             InitializeComponent();
@@ -75,11 +79,14 @@ namespace aura_skin
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
-            inits();
-
             products = productBUS.products;
             categories = categoriesBUS.categories;
             suppliers = suppliersBUS.suppliers;
+            users = usersBUS.users;
+            sales = salesBUS.sales;
+            roles = rolesBUS.roles;
+
+            inits();
             users= usersBUS.users;
             orders = ordersBUS.orders;
 
@@ -138,13 +145,31 @@ namespace aura_skin
             pnl_UserInfo.Controls.Add(lblUsername);
             #endregion
 
+            #region Check Phân Quyền
+            string[] allItems = { };
+            User userloginNow = usersBUS.GetUserByUsername(Username); 
+            foreach (Role item in roles)
+            {
+                if (userloginNow.id_role == item.id_role)
+                {
+                    if (item.role_name == "Admin")
+                    {
+                        allItems = getSt1.Concat(getSt2).Concat(getStLogOut).Distinct().ToArray();
+                    }
+                    else if (item.role_name == "Nhân viên bán hàng")
+                    {
+                        allItems = getSt1.Concat(getStLogOut).Distinct().ToArray();
+                    }
+                }
+            }
+            #endregion
 
             #region Thêm các button menu
             int startBtnMenu = pnl_UserInfo.Height + pnl_UserInfo.Location.Y - 0;
-            for (int i = 0; i < getSt.Length; i++)
+            for (int i = 0; i < allItems.Length; i++)
             {
                 GradientRadiusButton btnMenu = new GradientRadiusButton();
-                btnMenu.Text = getSt[i];
+                btnMenu.Text = allItems[i];
                 btnMenu.Width = 317;
                 btnMenu.Height = 75;
                 btnMenu.Cursor = Cursors.Hand;
@@ -266,6 +291,7 @@ namespace aura_skin
                         pnlSale.TabIndex = 6;
                         pnl_main.Controls.Add(pnlSale);
                         setupBtnTitle();
+                        addControlsToSalesPanel();
                     }
                     break;
                 case "Sản phẩm":
@@ -324,11 +350,6 @@ namespace aura_skin
                         addControlsToSuppliersPanel();
                     }
                     break;
-                case "Phiếu nhập":
-                    {
-
-                    }
-                    break;
                 case "Thống kê":
                     {
                         pnlThongKe.BackColor = System.Drawing.Color.White;
@@ -366,11 +387,38 @@ namespace aura_skin
         {
             pnlBanHang.ControlsDictionary["btnGoiYSanPham"].Click += btnGoiYSanPham_Click;
             pnlBanHang.ControlsDictionary["btnTimKiem"].Click += btnTimKiemSP_Cart_Click;
+            pnlBanHang.ControlsDictionary["btnThemVaoGio"].Click += btnAddProductToCart_Click;
+            #region Load dữ liệu vào combobox categories
+            // Gán dữ liệu vào ComboBox
+            var cboLoaiSP = pnlBanHang.ControlsDictionary["cboLoaiSP"] as SfComboBox;
+            cboLoaiSP.DataSource = categories;
+            cboLoaiSP.DisplayMember = "category_name"; // Hiển thị tên trong ComboBox
+            cboLoaiSP.ValueMember = "id_category"; // Gán giá trị của Id vào ComboBox
+
+            //Gán giá trị mặc định là chưa select
+            cboLoaiSP.SelectedIndex = -1;
+            #endregion
+
+
+        }
+
+        private void btnAddProductToCart_Click(object sender, EventArgs e)
+        {
+            //Lấy mã sp ra
+            string maSP = pnlBanHang.ControlsDictionary["txtMaSP"].Text.Trim();
+            Product product = productBUS.GetProductByID(maSP);
+
+
+            var sfDataGrid = sender as SfDataGrid;
+            if (sfDataGrid != null)
+            {
+
+            }
         }
 
         private void btnTimKiemSP_Cart_Click(object sender, EventArgs e)
         {
-            Product product = productBUS.GetProductByID(pnlBanHang.ControlsDictionary["txtMaSP"].Text.ToString());
+            Product product = productBUS.GetProductByID(pnlBanHang.ControlsDictionary["txtMaSP"].Text.Trim().ToString());
             pnlBanHang.ControlsDictionary["txtTenSP"].Text=product.product_name;
             pnlBanHang.ControlsDictionary["txtPrice"].Text = product.default_price.ToString();
             pnlBanHang.ControlsDictionary["txtDescription"].Text = product.description;
@@ -500,7 +548,60 @@ namespace aura_skin
 
             dtgProducts.CurrentCellActivated += dtgProducts_CurrentCellActivated;
         }
+        private void addControlsToSalesPanel()
+        {
+            #region Load dữ liệu vào table Sales
+            // Lấy SfDataGrid từ ControlsDictionary
+            var dtgSales = pnlSale.ControlsDictionary["dtgDsSales"] as SfDataGrid;
+            if (dtgSales != null)
+            {
+                dtgSales.AutoGenerateColumns = false;
+                // Gán DataSource
+                dtgSales.DataSource = sales;
+            }
+            else
+            {
+                MessageBox.Show("Không thể load dữ liệu Sales");
+            }
+            #endregion
 
+            #region Load dữ liệu vào combobox tênSP
+            // Gán dữ liệu vào ComboBox
+            var cboTenSP = pnlSale.ControlsDictionary["cboTenSP"] as SfComboBox;
+            cboTenSP.DataSource = products;
+            cboTenSP.DisplayMember = "product_name"; // Hiển thị tên trong ComboBox
+            cboTenSP.ValueMember = "id_product"; // Gán giá trị của Id vào ComboBox
+
+            //Gán giá trị mặc định là chưa select
+            cboTenSP.SelectedIndex = -1;
+            #endregion
+
+            dtgSales.CurrentCellActivated += dtgSales_CurrentCellActivated;
+
+        }
+        private void dtgSales_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
+        {
+            var sfDataGrid = sender as SfDataGrid;
+            if (sfDataGrid != null && sfDataGrid.CurrentItem != null)
+            {
+                // Lấy đối tượng của hàng hiện tại
+                var selectedRow = sfDataGrid.CurrentItem;
+
+                // Lấy giá trị của cột đầu tiên (mã)
+                var firstCellValue = selectedRow.GetType().GetProperty(sfDataGrid.Columns[0].MappingName)?.GetValue(selectedRow, null);
+
+                if (firstCellValue != null)
+                {
+                    //Sale sale = new Sale();
+                    //sale = salesBUS.GetSaleByID(firstCellValue.ToString());
+                    //pnlSale.ControlsDictionary["txtSupplierID"].Text = sale.id_sale;
+                    //pnlSale.ControlsDictionary["txtSupplierName"].Text = sale.supplier_name;
+                    //pnlSale.ControlsDictionary["txtEmail"].Text = sale.email;
+                    //pnlSale.ControlsDictionary["txtPhoneNumber"].Text = sale.phone_number;
+                    //pnlSale.ControlsDictionary["txtAddress"].Text = sale.address;
+                }
+            }
+        }
         private void addControlsToThongKePanel()
         {
             #region Load dữ liệu vào table thống kê

@@ -23,5 +23,21 @@ namespace aura_skin.BUS
         {
             return usersDAO.GetUserByID(id);
         }
+        public User GetUserByUsernameAndEmail(string username, string email)
+        {
+            return usersDAO.GetUserByUsernameAndEmail(username, email);
+        }
+        public User GetUserByUsername(string username)
+        {
+            return usersDAO.GetUserByUsername(username);
+        }
+        public bool ResetPassword(string id_user)
+        {
+            return usersDAO.ResetPassword(id_user);
+        }
+        public bool UpdatePassword(string id_user, string NewPassword)
+        {
+            return usersDAO.UpdatePassword(id_user, NewPassword);
+        }
     }
 }
