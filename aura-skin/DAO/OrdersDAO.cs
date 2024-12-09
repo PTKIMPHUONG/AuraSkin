@@ -46,5 +46,15 @@ namespace aura_skin.DAO
                 .Where(o => o.create_at >= startDate && o.create_at <= endDate)
                 .ToList();
         }
+
+        public int GetTodayNewCustomerCount()
+        {
+            DateTime today = DateTime.Today;
+
+            return db.Orders
+                     .GroupBy(o => o.CustomerInfo.id_customer_info) // Nhóm theo khách hàng
+                     .Where(g => g.Min(o => o.create_at).Date == today) // Ngày đầu tiên tạo đơn hàng là hôm nay
+                     .Count(); // Đếm số lượng khách hàng
+        }
     }
 }

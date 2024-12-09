@@ -25,6 +25,7 @@ using Syncfusion.WinForms.ListView;
 using System.IO;
 using PanelThongKeControl;
 using Syncfusion.WinForms.Input;
+using aura_skin.Lib;
 
 namespace aura_skin
 {
@@ -523,13 +524,15 @@ namespace aura_skin
             var subPanelKhachHang = pnlThongKe.Controls["PanelKhachHang"] as Panel;
             var subPanelDoanhThu = pnlThongKe.Controls["PanelDoanhThu"] as Panel;
             var lblTodayOrdersControl = subPanelDonHang?.Controls["LabelNewOrders"] as Label;
-            var lblTodayCustomerControl = subPanelKhachHang?.Controls["LabelNewOrders"] as Label;
+            var lblTodayCustomerControl = subPanelKhachHang?.Controls["LabelNewCustomers"] as Label;
             var lblTotalOrderControl = subPanelDonHang?.Controls["LabelTotalOrders"] as Label;
             var lblTotalCustomerControl = subPanelKhachHang?.Controls["LabelTotalCustomers"] as Label;
+            var lblTotalCustomerTodayControl = subPanelKhachHang?.Controls["LabelNewCustomers"] as Label;
             var lblTotalSalesTodayControl = subPanelDoanhThu?.Controls["LabelSalesToday"] as Label;
             var lblTotalSalesControl = subPanelDoanhThu?.Controls["LabelTotalDoanhThu"] as Label;
 
-            if (lblTodayOrdersControl != null && lblTotalOrderControl != null)
+            if (lblTodayOrdersControl != null && lblTodayCustomerControl != null && lblTotalOrderControl != null && lblTotalCustomerControl != null && lblTotalCustomerTodayControl != null
+                && lblTotalSalesTodayControl != null && lblTotalSalesControl != null)
             {
                 try
                 {
@@ -539,7 +542,7 @@ namespace aura_skin
                     int totalCustomer = customerInfoBUS.GetTotalCustomer();
                     int totalSales = ordersBUS.GetTotalOrderAmountByStatus();
                     int totalSalesToday = ordersBUS.GetTotalOrderAmountForTodayByStatus();
-
+                    int newCustomerCount = ordersBUS.GetTodayNewCustomerCount();
 
 
 
@@ -549,6 +552,7 @@ namespace aura_skin
                     lblTotalCustomerControl.Text = $"{totalCustomer}";
                     lblTotalSalesControl.Text = $"{totalSales}";
                     lblTotalSalesTodayControl.Text = $"{totalSalesToday}";
+                    lblTotalCustomerTodayControl.Text = $"{newCustomerCount}";
 
                 }
                 catch (Exception ex)
@@ -558,6 +562,8 @@ namespace aura_skin
                     lblTotalCustomerControl.Text = "Dữ liệu không khả dụng";
                     lblTotalSalesControl.Text = "Dữ liệu không khả dụng";
                     lblTotalSalesTodayControl.Text = $"Dữ liệu không khả dụng";
+                    lblTotalCustomerTodayControl.Text = $"Dữ liệu không khả dụng";
+
 
 
                     // Hiển thị thông báo lỗi
@@ -621,6 +627,73 @@ namespace aura_skin
             else
             {
                 MessageBox.Show("Không thể tìm thấy các điều khiển để thực hiện lọc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+
+            #region Xuất báo cáo word
+            var exportButton = pnlThongKe.ControlsDictionary["btnXuat"] as GradientRadiusButton;
+            if (exportButton != null)
+            {
+                exportButton.Click += (s, e) =>
+                {
+                    try
+                    {
+                        // Lấy giá trị từ SfDateTimeEdit (ngày bắt đầu và kết thúc)
+                        var startDate = startDateEdit.Value ?? DateTime.MinValue;
+                        var endDate = endDateEdit.Value ?? DateTime.MaxValue;
+          
+                        // Lọc đơn hàng theo ngày
+                        var filteredOrders = ordersBUS.GetOrdersByDateRange(startDate, endDate);
+                        var totalAmount = filteredOrders.Sum(o => o.total_amount);
+                        // Tạo bảng dữ liệu cho báo cáo
+                        DataTable tblOrderReport = new DataTable();
+                        tblOrderReport.Columns.Add("STT", typeof(int));
+                        tblOrderReport.Columns.Add("Mã đơn hàng", typeof(string));
+                        tblOrderReport.Columns.Add("Người tạo", typeof(string));
+                        tblOrderReport.Columns.Add("Trạng thái", typeof(string));
+                        tblOrderReport.Columns.Add("Ngày tạo", typeof(DateTime));
+                        tblOrderReport.Columns.Add("Thành tiền", typeof(decimal));
+                        tblOrderReport.Columns.Add("Khách hàng", typeof(string));
+
+                        // Thêm dữ liệu vào bảng
+                        int count = 1;
+                        foreach (var order in filteredOrders)
+                        {
+                            tblOrderReport.Rows.Add(count++, order.id_order, order.id_user, order.id_status, order.create_at, order.total_amount, order.customer_info);
+                        }
+
+                        // Tạo Dictionary chứa các giá trị cần xuất vào báo cáo
+                        Dictionary<string, string> dic = new Dictionary<string, string>
+                {
+                    { "startdate", startDate.ToString("dd/MM/yyyy") },
+                    { "enddate", endDate.ToString("dd/MM/yyyy") },
+                    { "tongdoanhthu", totalAmount.ToString() }
+                };
+
+                        // Đường dẫn đến file Template
+                        string templateFile = Application.StartupPath + "/Template/MauThongKeDoanhThu.dotx";
+
+                        // Khởi tạo đối tượng WordExport để xuất báo cáo
+                        WordExport wd = new WordExport(templateFile, true);
+
+                        // In các Field vào báo cáo
+                        wd.WriteFields(dic);
+
+                        // Xuất bảng vào báo cáo
+                        wd.WriteTable(tblOrderReport, 1);
+
+                        // Thông báo khi xuất xong
+                        MessageBox.Show("Xuất báo cáo thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi xuất báo cáo: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                };
+            }
+            else
+            {
+                MessageBox.Show("Không thể tìm thấy nút xuất báo cáo.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
         }

@@ -63,7 +63,41 @@ namespace aura_skin.BUS
 
         public List<Order> GetOrdersByDateRange(DateTime startDate, DateTime endDate)
         {
-            return ordersDAO.GetOrdersByDateRange(startDate, endDate);
+            var query = orders
+          .Where(o => o.create_at >= startDate && o.create_at <= endDate)
+          .Select(o => new
+          {
+              o.id_order,
+              o.id_user,
+              Username = o.User.username, // Lấy username từ bảng User
+              o.id_status,
+              StatusName = o.StatusOrder.status_name, // Lấy status name từ bảng OrderStatus
+              o.create_at,
+              o.total_amount,
+              o.delivery_fee,
+              CustomerID = o.CustomerInfo, // Lấy ID khách hàng từ bảng Orders
+              CustomerName = o.CustomerInfo.customer_name // Lấy tên khách hàng từ bảng CustomerInfo
+          })
+          .ToList();
+
+            // Chuyển đổi kết quả thành danh sách các đối tượng Order
+            var result = query.Select(o => new Order
+            {
+                id_order = o.id_order,
+                id_user = o.id_user,
+                id_status = o.StatusName,
+                create_at = o.create_at,
+                total_amount = o.total_amount,
+                delivery_fee = o.delivery_fee,
+                customer_info = o.CustomerName // Gán tên khách hàng vào trường customer_info
+            }).ToList();
+
+            return result;
+        }
+
+        public int GetTodayNewCustomerCount()
+        {
+            return ordersDAO.GetTodayNewCustomerCount();
         }
     }
 }

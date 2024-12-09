@@ -812,6 +812,8 @@ namespace aura_skin.DAO
 		private EntityRef<StatusOrder> _StatusOrder;
 		
 		private EntityRef<User> _User;
+
+
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
