@@ -125,6 +125,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\CategoriesBUS.cs" />
+    <Compile Include="BUS\CustomerInfoBUS.cs" />
+    <Compile Include="BUS\OrderBUS.cs" />
     <Compile Include="BUS\ProductBUS.cs" />
     <Compile Include="BUS\RolesBUS.cs" />
     <Compile Include="BUS\RecommendationsBUS.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\SalesDAO.cs" />
     <Compile Include="DAO\ConnectionManager.cs" />
+    <Compile Include="DAO\CustomerInfoDAO.cs" />
     <Compile Include="DAO\OrdersDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
     <Compile Include="DAO\RolesDAO.cs" />
@@ -245,6 +248,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\DoAnPTUNPMTM\AuraSkin\PanelThongKeControl\PanelThongKeControl.csproj">
+      <Project>{84cbb50d-770d-4bd2-b2d2-4feab8b34093}</Project>
+      <Name>PanelThongKeControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GradientButtonRadiusControl\GradientButtonRadiusControl.csproj">
       <Project>{0f05b640-d0e9-41fa-a546-05fa61dd5fed}</Project>
       <Name>GradientButtonRadiusControl</Name>

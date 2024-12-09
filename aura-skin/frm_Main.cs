@@ -23,8 +23,8 @@ using aura_skin.DAO;
 using Syncfusion.WinForms.DataGrid.Events;
 using Syncfusion.WinForms.ListView;
 using System.IO;
-
-
+using PanelThongKeControl;
+using Syncfusion.WinForms.Input;
 
 namespace aura_skin
 {
@@ -44,7 +44,7 @@ namespace aura_skin
         private PanelCustomer pnlCustomer;
         private PanelSale pnlSale;
         private PanelSupplier pnlSupplier;
-
+        private PanelThongKe pnlThongKe;
         #endregion
 
         ProductBUS productBUS = new ProductBUS();
@@ -53,10 +53,13 @@ namespace aura_skin
         UsersBUS usersBUS = new UsersBUS();
         SalesBUS salesBUS = new SalesBUS();
         RolesBUS rolesBUS = new RolesBUS();
+        OrderBUS ordersBUS = new OrderBUS();
+        CustomerInfoBUS customerInfoBUS = new CustomerInfoBUS();
 
         List<Category> categories = new List<Category>();
         List<Supplier> suppliers = new List<Supplier>();
         List<Product> products = new List<Product>();
+        List<Order> orders = new List<Order>();
         List<User> users = new List<User>();
         List<Sale> sales= new List<Sale>();
         List<Role> roles = new List<Role>();
@@ -84,6 +87,9 @@ namespace aura_skin
             roles = rolesBUS.roles;
 
             inits();
+            users= usersBUS.users;
+            orders = ordersBUS.orders;
+
         }
 
         //Hover chuột ra ngoài sẽ hiển thị màu 64,64,64
@@ -231,6 +237,8 @@ namespace aura_skin
             pnlNhanVien = new PanelNhanVien();
             pnlCustomer = new PanelCustomer();
             pnlSupplier = new PanelSupplier();
+            pnlThongKe = new PanelThongKe();
+
         }
         private void ClearPanelButKeepSpecificControls(Panel panel)
         {
@@ -344,7 +352,15 @@ namespace aura_skin
                     break;
                 case "Thống kê":
                     {
-
+                        pnlThongKe.BackColor = System.Drawing.Color.White;
+                        pnlThongKe.ForeColor = System.Drawing.Color.Black;
+                        pnlThongKe.Location = new System.Drawing.Point(-1, 3);
+                        pnlThongKe.Name = "pnlThongKe";
+                        pnlThongKe.Size = new System.Drawing.Size(1572, 850);
+                        pnlThongKe.TabIndex = 6;
+                        pnl_main.Controls.Add(pnlThongKe);
+                        setupBtnTitle();
+                        addControlsToThongKePanel();
                     }
                     break;
                 case "Đăng xuất":
@@ -585,6 +601,129 @@ namespace aura_skin
                     //pnlSale.ControlsDictionary["txtAddress"].Text = sale.address;
                 }
             }
+
+        private void addControlsToThongKePanel()
+        {
+            #region Load dữ liệu vào table thống kê
+            // Lấy SfDataGrid từ ControlsDictionary
+            var dtgOrders = pnlThongKe.ControlsDictionary["sfDataGridOrders"] as SfDataGrid;
+            if (dtgOrders != null)
+            {
+                dtgOrders.AutoGenerateColumns = false;
+                // Gán DataSource
+                dtgOrders.DataSource = orders;
+            }
+            else
+            {
+                MessageBox.Show("Không thể load dữ liệu Orders");
+            }
+            #endregion
+
+            #region Load dữ liệu form panelThongKe
+            var subPanelDonHang = pnlThongKe.Controls["PanelDonHang"] as Panel;
+            var subPanelKhachHang = pnlThongKe.Controls["PanelKhachHang"] as Panel;
+            var subPanelDoanhThu = pnlThongKe.Controls["PanelDoanhThu"] as Panel;
+            var lblTodayOrdersControl = subPanelDonHang?.Controls["LabelNewOrders"] as Label;
+            var lblTodayCustomerControl = subPanelKhachHang?.Controls["LabelNewOrders"] as Label;
+            var lblTotalOrderControl = subPanelDonHang?.Controls["LabelTotalOrders"] as Label;
+            var lblTotalCustomerControl = subPanelKhachHang?.Controls["LabelTotalCustomers"] as Label;
+            var lblTotalSalesTodayControl = subPanelDoanhThu?.Controls["LabelSalesToday"] as Label;
+            var lblTotalSalesControl = subPanelDoanhThu?.Controls["LabelTotalDoanhThu"] as Label;
+
+            if (lblTodayOrdersControl != null && lblTotalOrderControl != null)
+            {
+                try
+                {
+                    // Lấy dữ liệu từ BUS
+                    int todayOrderCount = ordersBUS.GetTodayOrderCount();
+                    int totalOrder = ordersBUS.GetTotalOrder();
+                    int totalCustomer = customerInfoBUS.GetTotalCustomer();
+                    int totalSales = ordersBUS.GetTotalOrderAmountByStatus();
+                    int totalSalesToday = ordersBUS.GetTotalOrderAmountForTodayByStatus();
+
+
+
+
+                    // Hiển thị dữ liệu lên giao diện
+                    lblTodayOrdersControl.Text = $"{todayOrderCount}";
+                    lblTotalOrderControl.Text = $"{totalOrder}";
+                    lblTotalCustomerControl.Text = $"{totalCustomer}";
+                    lblTotalSalesControl.Text = $"{totalSales}";
+                    lblTotalSalesTodayControl.Text = $"{totalSalesToday}";
+
+                }
+                catch (Exception ex)
+                {
+                    lblTodayOrdersControl.Text = "Dữ liệu không khả dụng";
+                    lblTotalOrderControl.Text = "Dữ liệu không khả dụng";
+                    lblTotalCustomerControl.Text = "Dữ liệu không khả dụng";
+                    lblTotalSalesControl.Text = "Dữ liệu không khả dụng";
+                    lblTotalSalesTodayControl.Text = $"Dữ liệu không khả dụng";
+
+
+                    // Hiển thị thông báo lỗi
+                    MessageBox.Show($"Không thể load dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy các Label trên panelThongKe", "Lỗi giao diện", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            #endregion
+
+            #region Lọc danh sách thống kê
+            var startDateEdit = pnlThongKe.ControlsDictionary["sfDateTimeEditStart"] as SfDateTimeEdit;
+            var endDateEdit = pnlThongKe.ControlsDictionary["sfDateTimeEditEnd"] as SfDateTimeEdit;
+            var filterButton = pnlThongKe.ControlsDictionary["btnFilter"] as GradientRadiusButton;
+            if (startDateEdit != null && endDateEdit != null && filterButton != null)
+            {
+                // Xử lý sự kiện ValueChanged của endDateEdit
+                endDateEdit.ValueChanged += (s, e) =>
+                {
+                    if (endDateEdit.Value < startDateEdit.Value)
+                    {
+                        MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        endDateEdit.Value = startDateEdit.Value; // Đặt lại giá trị endDateEdit
+                    }
+                };
+
+                // Xử lý sự kiện click của filterButton
+                filterButton.Click += (s, e) =>
+                {
+                    try
+                    {
+                        // Lấy giá trị từ SfDateTimeEdit
+                        DateTime startDate = startDateEdit.Value ?? DateTime.MinValue;
+                        DateTime endDate = endDateEdit.Value ?? DateTime.MaxValue;
+
+                        // Kiểm tra ràng buộc: endDate không được nhỏ hơn startDate
+                        if (endDate < startDate)
+                        {
+                            MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        // Lọc danh sách đơn hàng
+                        var filteredOrders = ordersBUS.GetOrdersByDateRange(startDate, endDate);
+
+                        // Gán danh sách đã lọc vào DataGrid
+                   
+                        if (dtgOrders != null)
+                        {
+                            dtgOrders.DataSource = filteredOrders;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi lọc đơn hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                };
+            }
+            else
+            {
+                MessageBox.Show("Không thể tìm thấy các điều khiển để thực hiện lọc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
         }
         private void dtgNhanVien_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
         {
