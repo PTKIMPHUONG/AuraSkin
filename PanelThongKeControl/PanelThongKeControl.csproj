@@ -133,6 +133,7 @@
     <ProjectReference Include="..\TabControlRadiusControl\TabControlRadiusControl.csproj">
       <Project>{1cbf2f01-352f-4311-8b77-d51b83fd6861}</Project>
       <Name>TabControlRadiusControl</Name>
+      
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
