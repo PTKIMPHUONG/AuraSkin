@@ -1,1 +1,1 @@
-Server=LAPTOP-CV1CRQMN\SQLEXPRESS;Database=AuraSkin;User Id=sa;Password=123;
+Server=DESKTOP-RM9HHHM\SQLEXPRESS;Database=AuraSkin;User Id=sa;Password=123;

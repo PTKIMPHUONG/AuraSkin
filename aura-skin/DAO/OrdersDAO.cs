@@ -26,5 +26,18 @@ namespace aura_skin.DAO
                      .GroupBy(o => o.id_product)
                      .ToDictionary(g => g.Key, g => g.Count());
         }
+        public List<Order> GetOrdersList()
+        {
+            return db.Orders.ToList();
+        }
+
+        // Lấy tổng số đơn hàng tạo trong ngày hôm nay
+        public int GetTodayOrderCount()
+        {
+            DateTime today = DateTime.Today;
+            return db.Orders
+                     .Where(o => o.create_at.Date == today)
+                     .Count();
+        }
     }
 }

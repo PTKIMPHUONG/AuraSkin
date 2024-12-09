@@ -23,6 +23,7 @@ using aura_skin.DAO;
 using Syncfusion.WinForms.DataGrid.Events;
 using Syncfusion.WinForms.ListView;
 using System.IO;
+using PanelThongKeControl;
 
 
 
@@ -44,17 +45,19 @@ namespace aura_skin
         private PanelCustomer pnlCustomer;
         private PanelSale pnlSale;
         private PanelSupplier pnlSupplier;
-
+        private PanelThongKe pnlThongKe;
         #endregion
 
         ProductBUS productBUS = new ProductBUS();
         CategoriesBUS categoriesBUS = new CategoriesBUS();
         SuppliersBUS suppliersBUS = new SuppliersBUS();
         UsersBUS usersBUS = new UsersBUS();
+        OrderBUS ordersBUS = new OrderBUS();
 
         List<Category> categories = new List<Category>();
         List<Supplier> suppliers = new List<Supplier>();
         List<Product> products = new List<Product>();
+        List<Order> orders = new List<Order>();
         List<User> users = new List<User>();
         public frm_Main()
         {
@@ -78,6 +81,8 @@ namespace aura_skin
             categories = categoriesBUS.categories;
             suppliers = suppliersBUS.suppliers;
             users= usersBUS.users;
+            orders = ordersBUS.orders;
+
         }
 
         //Hover chuột ra ngoài sẽ hiển thị màu 64,64,64
@@ -207,6 +212,8 @@ namespace aura_skin
             pnlNhanVien = new PanelNhanVien();
             pnlCustomer = new PanelCustomer();
             pnlSupplier = new PanelSupplier();
+            pnlThongKe = new PanelThongKe();
+
         }
         private void ClearPanelButKeepSpecificControls(Panel panel)
         {
@@ -324,7 +331,15 @@ namespace aura_skin
                     break;
                 case "Thống kê":
                     {
-
+                        pnlThongKe.BackColor = System.Drawing.Color.White;
+                        pnlThongKe.ForeColor = System.Drawing.Color.Black;
+                        pnlThongKe.Location = new System.Drawing.Point(-1, 3);
+                        pnlThongKe.Name = "pnlThongKe";
+                        pnlThongKe.Size = new System.Drawing.Size(1572, 850);
+                        pnlThongKe.TabIndex = 6;
+                        pnl_main.Controls.Add(pnlThongKe);
+                        setupBtnTitle();
+                        addControlsToThongKePanel();
                     }
                     break;
                 case "Đăng xuất":
@@ -484,6 +499,59 @@ namespace aura_skin
             pnlSanPham.ControlsDictionary["btnAddImage"].Click += btnSelectImageProduct_Click;
 
             dtgProducts.CurrentCellActivated += dtgProducts_CurrentCellActivated;
+        }
+
+        private void addControlsToThongKePanel()
+        {
+            #region Load dữ liệu vào table Orders
+            // Lấy SfDataGrid từ ControlsDictionary
+            var dtgOrders = pnlThongKe.ControlsDictionary["sfDataGridOrders"] as SfDataGrid;
+            if (dtgOrders != null)
+            {
+                dtgOrders.AutoGenerateColumns = false;
+                // Gán DataSource
+                dtgOrders.DataSource = orders;
+            }
+            else
+            {
+                MessageBox.Show("Không thể load dữ liệu Orders");
+            }
+            #endregion
+
+            #region Load dữ liệu form panelThongKe
+            var subPanelDonHang = pnlThongKe.Controls["PanelDonHang"] as Panel;
+            var subPanelKhachHang = pnlThongKe.Controls["PanelKhachHang"] as Panel;
+            var subPanelDoanhThu = pnlThongKe.Controls["PanelDoanhThu"] as Panel;
+            var subPanelLoiNhuan = pnlThongKe.Controls["PanelLoiNhuan"] as Panel;
+            var lblTodayOrdersControl = subPanelDonHang?.Controls["LabelNewOrders"] as Label;
+            var lblTotalOrderControl = subPanelDonHang?.Controls["LabelTotalOrders"] as Label;
+
+            if (lblTodayOrdersControl != null && lblTotalOrderControl != null)
+            {
+                try
+                {
+                    // Lấy dữ liệu từ OrdersBUS
+                    int todayOrderCount = ordersBUS.GetTodayOrderCount();
+                    decimal totalOrder = ordersBUS.GetTotalOrder();
+
+                    // Hiển thị dữ liệu lên giao diện
+                    lblTodayOrdersControl.Text = $"{todayOrderCount}";
+                    lblTotalOrderControl.Text = $"{totalOrder}"; // Định dạng tiền tệ
+                }
+                catch (Exception ex)
+                {
+                    lblTodayOrdersControl.Text = "Dữ liệu không khả dụng";
+                    lblTotalOrderControl.Text = "Dữ liệu không khả dụng";
+
+                    // Hiển thị thông báo lỗi
+                    MessageBox.Show($"Không thể load dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy các Label trên panelThongKe", "Lỗi giao diện", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            #endregion
         }
         private void dtgNhanVien_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
         {
