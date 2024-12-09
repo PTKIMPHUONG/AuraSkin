@@ -798,6 +798,7 @@ namespace aura_skin
                     pnlSupplier.ControlsDictionary["txtEmail"].Text = supplier.email;
                     pnlSupplier.ControlsDictionary["txtPhoneNumber"].Text = supplier.phone_number;
                     pnlSupplier.ControlsDictionary["txtAddress"].Text = supplier.address;
+
                 }
             }
         }
