@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.cboLoaiSP = new Syncfusion.WinForms.ListView.SfComboBox();
             this.pnlImageSP = new System.Windows.Forms.Panel();
             this.txtDescription = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.txtFindSP = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.dtgDsSP = new Syncfusion.WinForms.DataGrid.SfDataGrid();
-            this.lblFind = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblTitle = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblLoai = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblTenSP = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -60,7 +58,6 @@
             this.btnThemVaoGio = new GradientButtonRadiusControl.GradientRadiusButton();
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFindSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDsSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
@@ -72,7 +69,7 @@
             // 
             this.cboLoaiSP.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboLoaiSP.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cboLoaiSP.Location = new System.Drawing.Point(273, 200);
+            this.cboLoaiSP.Location = new System.Drawing.Point(273, 237);
             this.cboLoaiSP.Name = "cboLoaiSP";
             this.cboLoaiSP.Size = new System.Drawing.Size(270, 31);
             this.cboLoaiSP.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -99,25 +96,12 @@
             this.txtDescription.CornerRadius = 2;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtDescription.Location = new System.Drawing.Point(273, 268);
+            this.txtDescription.Location = new System.Drawing.Point(273, 338);
             this.txtDescription.MinimumSize = new System.Drawing.Size(14, 10);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
             this.txtDescription.Size = new System.Drawing.Size(270, 30);
             this.txtDescription.TabIndex = 60;
-            // 
-            // txtFindSP
-            // 
-            this.txtFindSP.BeforeTouchSize = new System.Drawing.Size(270, 30);
-            this.txtFindSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFindSP.CornerRadius = 2;
-            this.txtFindSP.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFindSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtFindSP.Location = new System.Drawing.Point(627, 388);
-            this.txtFindSP.MinimumSize = new System.Drawing.Size(14, 10);
-            this.txtFindSP.Name = "txtFindSP";
-            this.txtFindSP.Size = new System.Drawing.Size(270, 30);
-            this.txtFindSP.TabIndex = 59;
             // 
             // dtgDsSP
             // 
@@ -125,36 +109,36 @@
             this.dtgDsSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDsSP.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
-            gridTextColumn8.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn8.HeaderText = "Mã SP";
-            gridTextColumn8.MappingName = "id_product";
-            gridTextColumn9.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn9.HeaderText = "Tên SP";
-            gridTextColumn9.MappingName = "product_name";
-            gridTextColumn10.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn10.HeaderText = "Loại SP";
-            gridTextColumn10.MappingName = "id_category";
-            gridTextColumn11.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn11.HeaderText = "Đơn giá";
-            gridTextColumn11.MappingName = "default_price";
-            gridTextColumn12.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn12.HeaderText = "Số lượng";
-            gridTextColumn12.MappingName = "quantiy";
-            gridTextColumn13.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn13.HeaderText = "Mô tả";
-            gridTextColumn13.MappingName = "description";
-            gridTextColumn14.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn14.HeaderText = "Ảnh";
-            gridTextColumn14.MappingName = "default_image";
-            this.dtgDsSP.Columns.Add(gridTextColumn8);
-            this.dtgDsSP.Columns.Add(gridTextColumn9);
-            this.dtgDsSP.Columns.Add(gridTextColumn10);
-            this.dtgDsSP.Columns.Add(gridTextColumn11);
-            this.dtgDsSP.Columns.Add(gridTextColumn12);
-            this.dtgDsSP.Columns.Add(gridTextColumn13);
-            this.dtgDsSP.Columns.Add(gridTextColumn14);
+            gridTextColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn1.HeaderText = "Mã SP";
+            gridTextColumn1.MappingName = "id_product";
+            gridTextColumn2.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn2.HeaderText = "Tên SP";
+            gridTextColumn2.MappingName = "product_name";
+            gridTextColumn3.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn3.HeaderText = "Loại SP";
+            gridTextColumn3.MappingName = "id_category";
+            gridTextColumn4.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn4.HeaderText = "Đơn giá";
+            gridTextColumn4.MappingName = "default_price";
+            gridTextColumn5.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn5.HeaderText = "Số lượng";
+            gridTextColumn5.MappingName = "quantiy";
+            gridTextColumn6.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn6.HeaderText = "Mô tả";
+            gridTextColumn6.MappingName = "description";
+            gridTextColumn7.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn7.HeaderText = "Ảnh";
+            gridTextColumn7.MappingName = "default_image";
+            this.dtgDsSP.Columns.Add(gridTextColumn1);
+            this.dtgDsSP.Columns.Add(gridTextColumn2);
+            this.dtgDsSP.Columns.Add(gridTextColumn3);
+            this.dtgDsSP.Columns.Add(gridTextColumn4);
+            this.dtgDsSP.Columns.Add(gridTextColumn5);
+            this.dtgDsSP.Columns.Add(gridTextColumn6);
+            this.dtgDsSP.Columns.Add(gridTextColumn7);
             this.dtgDsSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.dtgDsSP.Location = new System.Drawing.Point(23, 382);
+            this.dtgDsSP.Location = new System.Drawing.Point(3, 382);
             this.dtgDsSP.Name = "dtgDsSP";
             this.dtgDsSP.PreviewRowHeight = 35;
             this.dtgDsSP.Size = new System.Drawing.Size(1041, 465);
@@ -162,16 +146,6 @@
             this.dtgDsSP.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dtgDsSP.TabIndex = 58;
             this.dtgDsSP.Text = "sfDataGrid1";
-            // 
-            // lblFind
-            // 
-            this.lblFind.AutoSize = false;
-            this.lblFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblFind.Location = new System.Drawing.Point(419, 391);
-            this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(202, 23);
-            this.lblFind.TabIndex = 57;
-            this.lblFind.Text = "Từ khóa tìm kiếm";
             // 
             // lblTitle
             // 
@@ -187,7 +161,7 @@
             // 
             this.lblLoai.AutoSize = false;
             this.lblLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblLoai.Location = new System.Drawing.Point(160, 203);
+            this.lblLoai.Location = new System.Drawing.Point(160, 240);
             this.lblLoai.Name = "lblLoai";
             this.lblLoai.Size = new System.Drawing.Size(145, 23);
             this.lblLoai.TabIndex = 55;
@@ -197,7 +171,7 @@
             // 
             this.lblTenSP.AutoSize = false;
             this.lblTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblTenSP.Location = new System.Drawing.Point(742, 134);
+            this.lblTenSP.Location = new System.Drawing.Point(726, 135);
             this.lblTenSP.Name = "lblTenSP";
             this.lblTenSP.Size = new System.Drawing.Size(130, 23);
             this.lblTenSP.TabIndex = 54;
@@ -207,7 +181,7 @@
             // 
             this.lblDonGia.AutoSize = false;
             this.lblDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblDonGia.Location = new System.Drawing.Point(742, 271);
+            this.lblDonGia.Location = new System.Drawing.Point(726, 341);
             this.lblDonGia.Name = "lblDonGia";
             this.lblDonGia.Size = new System.Drawing.Size(130, 27);
             this.lblDonGia.TabIndex = 53;
@@ -217,7 +191,7 @@
             // 
             this.lblSoLuong.AutoSize = false;
             this.lblSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblSoLuong.Location = new System.Drawing.Point(742, 204);
+            this.lblSoLuong.Location = new System.Drawing.Point(726, 241);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(130, 27);
             this.lblSoLuong.TabIndex = 52;
@@ -227,7 +201,7 @@
             // 
             this.lblDescription.AutoSize = false;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblDescription.Location = new System.Drawing.Point(160, 271);
+            this.lblDescription.Location = new System.Drawing.Point(160, 341);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(145, 23);
             this.lblDescription.TabIndex = 51;
@@ -237,7 +211,7 @@
             // 
             this.lbl_MaSP.AutoSize = false;
             this.lbl_MaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lbl_MaSP.Location = new System.Drawing.Point(160, 134);
+            this.lbl_MaSP.Location = new System.Drawing.Point(160, 135);
             this.lbl_MaSP.Name = "lbl_MaSP";
             this.lbl_MaSP.Size = new System.Drawing.Size(145, 23);
             this.lbl_MaSP.TabIndex = 50;
@@ -250,7 +224,7 @@
             this.txtTenSP.CornerRadius = 2;
             this.txtTenSP.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtTenSP.Location = new System.Drawing.Point(878, 127);
+            this.txtTenSP.Location = new System.Drawing.Point(862, 128);
             this.txtTenSP.MinimumSize = new System.Drawing.Size(14, 10);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.ReadOnly = true;
@@ -264,7 +238,7 @@
             this.txtPrice.CornerRadius = 2;
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtPrice.Location = new System.Drawing.Point(878, 268);
+            this.txtPrice.Location = new System.Drawing.Point(862, 338);
             this.txtPrice.MinimumSize = new System.Drawing.Size(14, 10);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
@@ -278,7 +252,7 @@
             this.txtMaSP.CornerRadius = 2;
             this.txtMaSP.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtMaSP.Location = new System.Drawing.Point(273, 127);
+            this.txtMaSP.Location = new System.Drawing.Point(273, 128);
             this.txtMaSP.MinimumSize = new System.Drawing.Size(14, 10);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(270, 30);
@@ -288,7 +262,7 @@
             // 
             this.numericQuantity.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.numericQuantity.Location = new System.Drawing.Point(878, 201);
+            this.numericQuantity.Location = new System.Drawing.Point(862, 238);
             this.numericQuantity.Name = "numericQuantity";
             this.numericQuantity.Size = new System.Drawing.Size(270, 30);
             this.numericQuantity.TabIndex = 73;
@@ -411,9 +385,7 @@
             this.Controls.Add(this.cboLoaiSP);
             this.Controls.Add(this.pnlImageSP);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtFindSP);
             this.Controls.Add(this.dtgDsSP);
-            this.Controls.Add(this.lblFind);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblLoai);
             this.Controls.Add(this.lblTenSP);
@@ -426,7 +398,6 @@
             this.Size = new System.Drawing.Size(1572, 850);
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFindSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDsSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
@@ -447,9 +418,7 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboLoaiSP;
         private System.Windows.Forms.Panel pnlImageSP;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDescription;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtFindSP;
         private Syncfusion.WinForms.DataGrid.SfDataGrid dtgDsSP;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel lblFind;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblTitle;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblLoai;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblTenSP;

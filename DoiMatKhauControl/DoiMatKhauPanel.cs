@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PanelSaleControl
+namespace DoiMatKhauControl
 {
-    public partial class PanelSale: UserControl
+    public partial class DoiMatKhauPanel: UserControl
     {
-        public PanelSale()
+        public DoiMatKhauPanel()
         {
             InitializeComponent();
             InitializeControlsDictionary();
@@ -25,11 +25,6 @@ namespace PanelSaleControl
             {
                 ControlsDictionary[control.Name] = control;
             }
-        }
-
-        private void autoLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
