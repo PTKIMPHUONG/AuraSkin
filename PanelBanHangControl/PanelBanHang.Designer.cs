@@ -91,7 +91,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(371, 28);
+            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.CornerRadius = 2;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -219,7 +219,7 @@
             // 
             // txtTenSP
             // 
-            this.txtTenSP.BeforeTouchSize = new System.Drawing.Size(371, 28);
+            this.txtTenSP.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.txtTenSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenSP.CornerRadius = 2;
             this.txtTenSP.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -233,7 +233,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(371, 28);
+            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrice.CornerRadius = 2;
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -247,7 +247,7 @@
             // 
             // txtMaSP
             // 
-            this.txtMaSP.BeforeTouchSize = new System.Drawing.Size(371, 28);
+            this.txtMaSP.BeforeTouchSize = new System.Drawing.Size(270, 30);
             this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaSP.CornerRadius = 2;
             this.txtMaSP.Cursor = System.Windows.Forms.Cursors.Arrow;

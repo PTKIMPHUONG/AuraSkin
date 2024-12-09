@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DoiMatKhauControl">
-      <HintPath>..\DoiMatKhauControl\obj\Debug\DoiMatKhauControl.dll</HintPath>
-    </Reference>
     <Reference Include="GradientPanelRadiusControl">
       <HintPath>..\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.dll</HintPath>
     </Reference>
@@ -248,9 +245,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\DoAnPTUNPMTM\AuraSkin\PanelThongKeControl\PanelThongKeControl.csproj">
-      <Project>{84cbb50d-770d-4bd2-b2d2-4feab8b34093}</Project>
-      <Name>PanelThongKeControl</Name>
+    <ProjectReference Include="..\DoiMatKhauControl\DoiMatKhauControl.csproj">
+      <Project>{e6d0d2d8-d8f4-42d2-bb70-0f09f4bb4c49}</Project>
+      <Name>DoiMatKhauControl</Name>
     </ProjectReference>
     <ProjectReference Include="..\GradientButtonRadiusControl\GradientButtonRadiusControl.csproj">
       <Project>{0f05b640-d0e9-41fa-a546-05fa61dd5fed}</Project>
@@ -267,6 +264,10 @@
     <ProjectReference Include="..\PanelPhieuNhapControl\PanelPhieuNhapControl.csproj">
       <Project>{e7f97b9f-2147-4c49-9780-d16fd6c20dc7}</Project>
       <Name>PanelPhieuNhapControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanelThongKeControl\PanelThongKeControl.csproj">
+      <Project>{84cbb50d-770d-4bd2-b2d2-4feab8b34093}</Project>
+      <Name>PanelThongKeControl</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

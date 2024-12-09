@@ -32,7 +32,7 @@ namespace aura_skin
     {
         public string Username;
         //string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm" };
-        string[] getSt1 = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Khách hàng", "Nhà cung cấp" };
+        string[] getSt1 = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Khách hàng", "Nhà cung cấp","Thống kê" };
         string[] getSt2 = { "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê" };
         string[] getStLogOut = { "Đăng xuất" };
 
@@ -154,11 +154,11 @@ namespace aura_skin
                 {
                     if (item.role_name == "Admin")
                     {
-                        allItems = getSt1.Concat(getSt2).Concat(getStLogOut).ToArray();
+                        allItems = getSt1.Concat(getSt2).Concat(getStLogOut).Distinct().ToArray();
                     }
                     else if (item.role_name == "Nhân viên bán hàng")
                     {
-                        allItems = getSt1.Concat(getStLogOut).ToArray(); 
+                        allItems = getSt1.Concat(getStLogOut).Distinct().ToArray();
                     }
                 }
             }
@@ -601,7 +601,7 @@ namespace aura_skin
                     //pnlSale.ControlsDictionary["txtAddress"].Text = sale.address;
                 }
             }
-
+        }
         private void addControlsToThongKePanel()
         {
             #region Load dữ liệu vào table thống kê

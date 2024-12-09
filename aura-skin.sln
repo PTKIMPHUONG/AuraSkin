@@ -36,7 +36,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuenMatKhauControl", "QuenMatKhauControl\QuenMatKhauControl.csproj", "{A98BCA90-38AB-43B5-A8F6-E496C3C610A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoiMatKhauControl", "DoiMatKhauControl\DoiMatKhauControl.csproj", "{E6D0D2D8-D8F4-42D2-BB70-0F09F4BB4C49}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelThongKeControl", "..\..\DoAnPTUNPMTM\AuraSkin\PanelThongKeControl\PanelThongKeControl.csproj", "{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelThongKeControl", "PanelThongKeControl\PanelThongKeControl.csproj", "{84CBB50D-770D-4BD2-B2D2-4FEAB8B34093}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
