@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\CategoriesBUS.cs" />
+    <Compile Include="BUS\CustomerInfoBUS.cs" />
     <Compile Include="BUS\OrderBUS.cs" />
     <Compile Include="BUS\ProductBUS.cs" />
     <Compile Include="BUS\RolesBUS.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="BUS\UsersBUS.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\ConnectionManager.cs" />
+    <Compile Include="DAO\CustomerInfoDAO.cs" />
     <Compile Include="DAO\OrdersDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
     <Compile Include="DAO\RolesDAO.cs" />

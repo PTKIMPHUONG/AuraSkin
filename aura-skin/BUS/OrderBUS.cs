@@ -26,9 +26,44 @@ namespace aura_skin.BUS
         {
             return ordersDAO.GetTodayOrderCount();
         }
-        public decimal GetTotalOrder()
+        public int GetTotalOrder()
         {
             return orders.Count;
+        }
+
+       
+        public int GetTotalOrderAmount()
+        {
+            // Tổng tiền từ tất cả các đơn hàng
+            return (int)orders.Sum(o => o.total_amount); 
+        }
+
+        public int GetTotalOrderAmountByStatus()
+        {
+            // Lọc các đơn hàng theo trạng thái và tính tổng tiền cho tất cả các trạng thái
+            var totalAmount = orders
+                .Where(o => o.id_status == "STA001" || o.id_status == "STA002" || o.id_status == "STA003")
+                .Sum(o => o.total_amount);
+
+            return (int)totalAmount;
+        }
+
+        public int GetTotalOrderAmountForTodayByStatus()
+        {
+            var today = DateTime.Today; // Ngày hôm nay (không có giờ)
+
+            // Lọc các đơn hàng có trạng thái STA001, STA002, STA003 và ngày tạo trong ngày hôm nay
+            var totalAmount = orders
+                .Where(o => (o.id_status == "STA001" || o.id_status == "STA002" || o.id_status == "STA003")
+                            && o.create_at >= today && o.create_at < today.AddDays(1))
+                .Sum(o => o.total_amount);
+
+            return (int)totalAmount;
+        }
+
+        public List<Order> GetOrdersByDateRange(DateTime startDate, DateTime endDate)
+        {
+            return ordersDAO.GetOrdersByDateRange(startDate, endDate);
         }
     }
 }

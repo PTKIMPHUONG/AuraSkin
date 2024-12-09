@@ -26,7 +26,7 @@ namespace aura_skin.DAO
                      .GroupBy(o => o.id_product)
                      .ToDictionary(g => g.Key, g => g.Count());
         }
-        public List<Order> GetOrdersList()
+         public List<Order> GetOrdersList()
         {
             return db.Orders.ToList();
         }
@@ -38,6 +38,13 @@ namespace aura_skin.DAO
             return db.Orders
                      .Where(o => o.create_at.Date == today)
                      .Count();
+        }
+
+        public List<Order> GetOrdersByDateRange(DateTime startDate, DateTime endDate)
+        {
+            return db.Orders
+                .Where(o => o.create_at >= startDate && o.create_at <= endDate)
+                .ToList();
         }
     }
 }
