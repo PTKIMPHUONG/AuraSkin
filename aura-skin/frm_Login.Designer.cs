@@ -37,6 +37,8 @@
             this.lbl_DangKyForm = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.chk_HienThiPass = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.btn_DangNhap = new GradientButtonRadiusControl.GradientRadiusButton();
+            this.lblQuenMatKhau = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.lblDoiMatKhau = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenDangNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_HienThiPass)).BeginInit();
@@ -115,7 +117,7 @@
             this.lbl_DangKyForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_DangKyForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lbl_DangKyForm.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lbl_DangKyForm.Location = new System.Drawing.Point(195, 617);
+            this.lbl_DangKyForm.Location = new System.Drawing.Point(92, 653);
             this.lbl_DangKyForm.Name = "lbl_DangKyForm";
             this.lbl_DangKyForm.Size = new System.Drawing.Size(158, 20);
             this.lbl_DangKyForm.TabIndex = 8;
@@ -156,12 +158,40 @@
             this.btn_DangNhap.Text = "Đăng Nhập";
             this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
             // 
+            // lblQuenMatKhau
+            // 
+            this.lblQuenMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuenMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblQuenMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lblQuenMatKhau.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblQuenMatKhau.Location = new System.Drawing.Point(318, 653);
+            this.lblQuenMatKhau.Name = "lblQuenMatKhau";
+            this.lblQuenMatKhau.Size = new System.Drawing.Size(145, 20);
+            this.lblQuenMatKhau.TabIndex = 10;
+            this.lblQuenMatKhau.Text = "Quên mật khẩu?";
+            this.lblQuenMatKhau.Click += new System.EventHandler(this.lblQuenMatKhau_Click);
+            // 
+            // lblDoiMatKhau
+            // 
+            this.lblDoiMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lblDoiMatKhau.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblDoiMatKhau.Location = new System.Drawing.Point(92, 415);
+            this.lblDoiMatKhau.Name = "lblDoiMatKhau";
+            this.lblDoiMatKhau.Size = new System.Drawing.Size(119, 20);
+            this.lblDoiMatKhau.TabIndex = 11;
+            this.lblDoiMatKhau.Text = "Đổi mật khẩu";
+            this.lblDoiMatKhau.Click += new System.EventHandler(this.lblDoiMatKhau_Click);
+            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(558, 665);
+            this.ClientSize = new System.Drawing.Size(558, 704);
+            this.Controls.Add(this.lblDoiMatKhau);
+            this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.chk_HienThiPass);
             this.Controls.Add(this.lbl_DangKyForm);
             this.Controls.Add(this.btn_DangNhap);
@@ -194,6 +224,8 @@
         private GradientButtonRadiusControl.GradientRadiusButton btn_DangNhap;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lbl_DangKyForm;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chk_HienThiPass;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblQuenMatKhau;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblDoiMatKhau;
     }
 }
 

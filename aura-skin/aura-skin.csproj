@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DoiMatKhauControl">
+      <HintPath>..\DoiMatKhauControl\obj\Debug\DoiMatKhauControl.dll</HintPath>
+    </Reference>
     <Reference Include="GradientPanelRadiusControl">
       <HintPath>..\GradientPanelRadiusControl\obj\Debug\GradientPanelRadiusControl.dll</HintPath>
     </Reference>
@@ -51,6 +54,9 @@
     <Reference Include="PanelSupplierControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\PanelSupplierControl\obj\Debug\PanelSupplierControl.dll</HintPath>
+    </Reference>
+    <Reference Include="QuenMatKhauControl">
+      <HintPath>..\QuenMatKhauControl\obj\Debug\QuenMatKhauControl.dll</HintPath>
     </Reference>
     <Reference Include="RoundedBorderControl">
       <HintPath>..\RoundedBorderControl\obj\Debug\RoundedBorderControl.dll</HintPath>
@@ -122,9 +128,11 @@
     <Compile Include="BUS\ProductBUS.cs" />
     <Compile Include="BUS\RolesBUS.cs" />
     <Compile Include="BUS\RecommendationsBUS.cs" />
+    <Compile Include="BUS\SalesBUS.cs" />
     <Compile Include="BUS\SuppliersBUS.cs" />
     <Compile Include="BUS\UsersBUS.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
+    <Compile Include="DAO\SalesDAO.cs" />
     <Compile Include="DAO\ConnectionManager.cs" />
     <Compile Include="DAO\OrdersDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
@@ -152,6 +160,12 @@
     <Compile Include="frm_Customer.Designer.cs">
       <DependentUpon>frm_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DoiMatKhau.Designer.cs">
+      <DependentUpon>frm_DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +177,12 @@
     </Compile>
     <Compile Include="frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuenMatKhau.Designer.cs">
+      <DependentUpon>frm_QuenMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Register.cs">
       <SubType>Form</SubType>
@@ -178,11 +198,17 @@
     <EmbeddedResource Include="frm_Customer.resx">
       <DependentUpon>frm_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_DoiMatKhau.resx">
+      <DependentUpon>frm_DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuenMatKhau.resx">
+      <DependentUpon>frm_QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Register.resx">
       <DependentUpon>frm_Register.cs</DependentUpon>

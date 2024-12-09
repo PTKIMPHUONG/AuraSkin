@@ -61,12 +61,11 @@ namespace aura_skin
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-            //if (txt_tenDangNhap.Text == "123" && txt_password.Text == "123" || txt_tenDangNhap.Text == "admin" && txt_password.Text == "123")
-            if(CheckUsernameAndPass(txt_tenDangNhap.Text, txt_password.Text))
+            if(CheckUsernameAndPass(txt_tenDangNhap.Text.Trim(), txt_password.Text))
             {
                 this.Hide();
                 frm_Main mainForm = new frm_Main();
-                mainForm.Username = txt_tenDangNhap.Text;
+                mainForm.Username = txt_tenDangNhap.Text.Trim();
                 mainForm.ShowDialog();
                 this.Close();
             }
@@ -81,6 +80,18 @@ namespace aura_skin
                     return true;
             }
             return false;
+        }
+
+        private void lblQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            frm_QuenMatKhau frmQuenMatKhau=new frm_QuenMatKhau();
+            frmQuenMatKhau.ShowDialog();
+        }
+
+        private void lblDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frm_DoiMatKhau frmDoiMatKhau = new frm_DoiMatKhau();
+            frmDoiMatKhau.ShowDialog();
         }
     }
 }
