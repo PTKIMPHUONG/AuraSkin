@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.cboLoaiSP = new Syncfusion.WinForms.ListView.SfComboBox();
             this.pnlImageSP = new System.Windows.Forms.Panel();
-            this.txtDonViTinh = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtDescription = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.txtFindSP = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.dtgDsSP = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.lblFind = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -46,26 +46,26 @@
             this.lblTenSP = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblDonGia = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblSoLuong = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.lblDonViTinh = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.lblDescription = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lbl_MaSP = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.textBoxExt3 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.textBoxExt4 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.numericUpDownExt1 = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.txtTenSP = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtPrice = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtMaSP = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.numericQuantity = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.btnGoiYSanPham = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnAddImage = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnTimKiem = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnThanhToan = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnXoaKhoiGio = new GradientButtonRadiusControl.GradientRadiusButton();
             this.btnThemVaoGio = new GradientButtonRadiusControl.GradientRadiusButton();
-            this.btnGoiYSanPham = new GradientButtonRadiusControl.GradientRadiusButton();
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFindSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDsSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExt1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // cboLoaiSP
@@ -85,24 +85,26 @@
             // 
             // pnlImageSP
             // 
-            this.pnlImageSP.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlImageSP.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlImageSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlImageSP.Location = new System.Drawing.Point(1299, 106);
             this.pnlImageSP.Name = "pnlImageSP";
             this.pnlImageSP.Size = new System.Drawing.Size(250, 250);
             this.pnlImageSP.TabIndex = 61;
             // 
-            // txtDonViTinh
+            // txtDescription
             // 
-            this.txtDonViTinh.BeforeTouchSize = new System.Drawing.Size(270, 30);
-            this.txtDonViTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDonViTinh.CornerRadius = 2;
-            this.txtDonViTinh.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDonViTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtDonViTinh.Location = new System.Drawing.Point(273, 268);
-            this.txtDonViTinh.MinimumSize = new System.Drawing.Size(14, 10);
-            this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(270, 30);
-            this.txtDonViTinh.TabIndex = 60;
+            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(270, 30);
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.CornerRadius = 2;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.txtDescription.Location = new System.Drawing.Point(273, 268);
+            this.txtDescription.MinimumSize = new System.Drawing.Size(14, 10);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(270, 30);
+            this.txtDescription.TabIndex = 60;
             // 
             // txtFindSP
             // 
@@ -123,39 +125,39 @@
             this.dtgDsSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDsSP.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
-            gridTextColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn1.HeaderText = "Mã SP";
-            gridTextColumn1.MappingName = "colMaSP";
-            gridTextColumn2.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn2.HeaderText = "Tên SP";
-            gridTextColumn2.MappingName = "colTenSP";
-            gridTextColumn3.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn3.HeaderText = "Loại SP";
-            gridTextColumn3.MappingName = "colLoaiSP";
-            gridTextColumn4.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn4.HeaderText = "Đơn giá";
-            gridTextColumn4.MappingName = "colDonGia";
-            gridTextColumn5.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn5.HeaderText = "Số lượng";
-            gridTextColumn5.MappingName = "colSoLuong";
-            gridTextColumn6.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn6.HeaderText = "Đơn vị tính";
-            gridTextColumn6.MappingName = "colDonViTinh";
-            gridTextColumn7.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn7.HeaderText = "Ảnh";
-            gridTextColumn7.MappingName = "colImageSP";
-            this.dtgDsSP.Columns.Add(gridTextColumn1);
-            this.dtgDsSP.Columns.Add(gridTextColumn2);
-            this.dtgDsSP.Columns.Add(gridTextColumn3);
-            this.dtgDsSP.Columns.Add(gridTextColumn4);
-            this.dtgDsSP.Columns.Add(gridTextColumn5);
-            this.dtgDsSP.Columns.Add(gridTextColumn6);
-            this.dtgDsSP.Columns.Add(gridTextColumn7);
+            gridTextColumn8.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn8.HeaderText = "Mã SP";
+            gridTextColumn8.MappingName = "id_product";
+            gridTextColumn9.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn9.HeaderText = "Tên SP";
+            gridTextColumn9.MappingName = "product_name";
+            gridTextColumn10.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn10.HeaderText = "Loại SP";
+            gridTextColumn10.MappingName = "id_category";
+            gridTextColumn11.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn11.HeaderText = "Đơn giá";
+            gridTextColumn11.MappingName = "default_price";
+            gridTextColumn12.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn12.HeaderText = "Số lượng";
+            gridTextColumn12.MappingName = "quantiy";
+            gridTextColumn13.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn13.HeaderText = "Mô tả";
+            gridTextColumn13.MappingName = "description";
+            gridTextColumn14.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn14.HeaderText = "Ảnh";
+            gridTextColumn14.MappingName = "default_image";
+            this.dtgDsSP.Columns.Add(gridTextColumn8);
+            this.dtgDsSP.Columns.Add(gridTextColumn9);
+            this.dtgDsSP.Columns.Add(gridTextColumn10);
+            this.dtgDsSP.Columns.Add(gridTextColumn11);
+            this.dtgDsSP.Columns.Add(gridTextColumn12);
+            this.dtgDsSP.Columns.Add(gridTextColumn13);
+            this.dtgDsSP.Columns.Add(gridTextColumn14);
             this.dtgDsSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.dtgDsSP.Location = new System.Drawing.Point(23, 382);
             this.dtgDsSP.Name = "dtgDsSP";
             this.dtgDsSP.PreviewRowHeight = 35;
-            this.dtgDsSP.Size = new System.Drawing.Size(1041, 457);
+            this.dtgDsSP.Size = new System.Drawing.Size(1041, 465);
             this.dtgDsSP.Style.HeaderStyle.BackColor = System.Drawing.Color.LightSkyBlue;
             this.dtgDsSP.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dtgDsSP.TabIndex = 58;
@@ -221,15 +223,15 @@
             this.lblSoLuong.TabIndex = 52;
             this.lblSoLuong.Text = "Số lượng";
             // 
-            // lblDonViTinh
+            // lblDescription
             // 
-            this.lblDonViTinh.AutoSize = false;
-            this.lblDonViTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblDonViTinh.Location = new System.Drawing.Point(160, 271);
-            this.lblDonViTinh.Name = "lblDonViTinh";
-            this.lblDonViTinh.Size = new System.Drawing.Size(145, 23);
-            this.lblDonViTinh.TabIndex = 51;
-            this.lblDonViTinh.Text = "Đơn vị tính";
+            this.lblDescription.AutoSize = false;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lblDescription.Location = new System.Drawing.Point(160, 271);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(145, 23);
+            this.lblDescription.TabIndex = 51;
+            this.lblDescription.Text = "Mô tả";
             // 
             // lbl_MaSP
             // 
@@ -241,53 +243,72 @@
             this.lbl_MaSP.TabIndex = 50;
             this.lbl_MaSP.Text = "Mã SP";
             // 
-            // textBoxExt1
+            // txtTenSP
             // 
-            this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(270, 30);
-            this.textBoxExt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt1.CornerRadius = 2;
-            this.textBoxExt1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxExt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.textBoxExt1.Location = new System.Drawing.Point(878, 127);
-            this.textBoxExt1.MinimumSize = new System.Drawing.Size(14, 10);
-            this.textBoxExt1.Name = "textBoxExt1";
-            this.textBoxExt1.Size = new System.Drawing.Size(270, 30);
-            this.textBoxExt1.TabIndex = 69;
+            this.txtTenSP.BeforeTouchSize = new System.Drawing.Size(270, 30);
+            this.txtTenSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenSP.CornerRadius = 2;
+            this.txtTenSP.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.txtTenSP.Location = new System.Drawing.Point(878, 127);
+            this.txtTenSP.MinimumSize = new System.Drawing.Size(14, 10);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.ReadOnly = true;
+            this.txtTenSP.Size = new System.Drawing.Size(270, 30);
+            this.txtTenSP.TabIndex = 69;
             // 
-            // textBoxExt3
+            // txtPrice
             // 
-            this.textBoxExt3.BeforeTouchSize = new System.Drawing.Size(270, 30);
-            this.textBoxExt3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt3.CornerRadius = 2;
-            this.textBoxExt3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxExt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.textBoxExt3.Location = new System.Drawing.Point(878, 268);
-            this.textBoxExt3.MinimumSize = new System.Drawing.Size(14, 10);
-            this.textBoxExt3.Name = "textBoxExt3";
-            this.textBoxExt3.Size = new System.Drawing.Size(270, 30);
-            this.textBoxExt3.TabIndex = 71;
+            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(270, 30);
+            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrice.CornerRadius = 2;
+            this.txtPrice.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.txtPrice.Location = new System.Drawing.Point(878, 268);
+            this.txtPrice.MinimumSize = new System.Drawing.Size(14, 10);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(270, 30);
+            this.txtPrice.TabIndex = 71;
             // 
-            // textBoxExt4
+            // txtMaSP
             // 
-            this.textBoxExt4.BeforeTouchSize = new System.Drawing.Size(270, 30);
-            this.textBoxExt4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt4.CornerRadius = 2;
-            this.textBoxExt4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxExt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.textBoxExt4.Location = new System.Drawing.Point(273, 127);
-            this.textBoxExt4.MinimumSize = new System.Drawing.Size(14, 10);
-            this.textBoxExt4.Name = "textBoxExt4";
-            this.textBoxExt4.Size = new System.Drawing.Size(270, 30);
-            this.textBoxExt4.TabIndex = 72;
+            this.txtMaSP.BeforeTouchSize = new System.Drawing.Size(270, 30);
+            this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaSP.CornerRadius = 2;
+            this.txtMaSP.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.txtMaSP.Location = new System.Drawing.Point(273, 127);
+            this.txtMaSP.MinimumSize = new System.Drawing.Size(14, 10);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(270, 30);
+            this.txtMaSP.TabIndex = 72;
             // 
-            // numericUpDownExt1
+            // numericQuantity
             // 
-            this.numericUpDownExt1.BeforeTouchSize = new System.Drawing.Size(270, 30);
-            this.numericUpDownExt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.numericUpDownExt1.Location = new System.Drawing.Point(878, 201);
-            this.numericUpDownExt1.Name = "numericUpDownExt1";
-            this.numericUpDownExt1.Size = new System.Drawing.Size(270, 30);
-            this.numericUpDownExt1.TabIndex = 73;
+            this.numericQuantity.BeforeTouchSize = new System.Drawing.Size(270, 30);
+            this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.numericQuantity.Location = new System.Drawing.Point(878, 201);
+            this.numericQuantity.Name = "numericQuantity";
+            this.numericQuantity.Size = new System.Drawing.Size(270, 30);
+            this.numericQuantity.TabIndex = 73;
+            // 
+            // btnGoiYSanPham
+            // 
+            this.btnGoiYSanPham.BorderColor = System.Drawing.Color.Transparent;
+            this.btnGoiYSanPham.CornerRadius = 10;
+            this.btnGoiYSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoiYSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGoiYSanPham.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnGoiYSanPham.GradientColor1 = System.Drawing.Color.LightPink;
+            this.btnGoiYSanPham.GradientColor2 = System.Drawing.Color.LightSkyBlue;
+            this.btnGoiYSanPham.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.btnGoiYSanPham.Location = new System.Drawing.Point(1214, 464);
+            this.btnGoiYSanPham.Name = "btnGoiYSanPham";
+            this.btnGoiYSanPham.Size = new System.Drawing.Size(239, 71);
+            this.btnGoiYSanPham.Style.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnGoiYSanPham.TabIndex = 74;
+            this.btnGoiYSanPham.Text = "Gợi ý sản phẩm";
             // 
             // btnAddImage
             // 
@@ -372,33 +393,16 @@
             this.btnThemVaoGio.TabIndex = 63;
             this.btnThemVaoGio.Text = "Thêm vào giỏ";
             // 
-            // btnGoiYSanPham
-            // 
-            this.btnGoiYSanPham.BorderColor = System.Drawing.Color.Transparent;
-            this.btnGoiYSanPham.CornerRadius = 10;
-            this.btnGoiYSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGoiYSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnGoiYSanPham.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnGoiYSanPham.GradientColor1 = System.Drawing.Color.LightPink;
-            this.btnGoiYSanPham.GradientColor2 = System.Drawing.Color.LightSkyBlue;
-            this.btnGoiYSanPham.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.btnGoiYSanPham.Location = new System.Drawing.Point(1214, 464);
-            this.btnGoiYSanPham.Name = "btnGoiYSanPham";
-            this.btnGoiYSanPham.Size = new System.Drawing.Size(239, 71);
-            this.btnGoiYSanPham.Style.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnGoiYSanPham.TabIndex = 74;
-            this.btnGoiYSanPham.Text = "Gợi ý sản phẩm";
-            // 
             // PanelBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnGoiYSanPham);
-            this.Controls.Add(this.numericUpDownExt1);
-            this.Controls.Add(this.textBoxExt4);
-            this.Controls.Add(this.textBoxExt3);
-            this.Controls.Add(this.textBoxExt1);
+            this.Controls.Add(this.numericQuantity);
+            this.Controls.Add(this.txtMaSP);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtTenSP);
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnThanhToan);
@@ -406,7 +410,7 @@
             this.Controls.Add(this.btnThemVaoGio);
             this.Controls.Add(this.cboLoaiSP);
             this.Controls.Add(this.pnlImageSP);
-            this.Controls.Add(this.txtDonViTinh);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtFindSP);
             this.Controls.Add(this.dtgDsSP);
             this.Controls.Add(this.lblFind);
@@ -415,19 +419,19 @@
             this.Controls.Add(this.lblTenSP);
             this.Controls.Add(this.lblDonGia);
             this.Controls.Add(this.lblSoLuong);
-            this.Controls.Add(this.lblDonViTinh);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lbl_MaSP);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "PanelBanHang";
             this.Size = new System.Drawing.Size(1572, 850);
             ((System.ComponentModel.ISupportInitialize)(this.cboLoaiSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFindSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDsSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExt1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,7 +446,7 @@
         private GradientButtonRadiusControl.GradientRadiusButton btnThemVaoGio;
         private Syncfusion.WinForms.ListView.SfComboBox cboLoaiSP;
         private System.Windows.Forms.Panel pnlImageSP;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDonViTinh;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDescription;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtFindSP;
         private Syncfusion.WinForms.DataGrid.SfDataGrid dtgDsSP;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblFind;
@@ -451,12 +455,12 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblTenSP;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblDonGia;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblSoLuong;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel lblDonViTinh;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblDescription;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lbl_MaSP;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt3;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt4;
-        private Syncfusion.Windows.Forms.Tools.NumericUpDownExt numericUpDownExt1;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtTenSP;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtPrice;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtMaSP;
+        private Syncfusion.Windows.Forms.Tools.NumericUpDownExt numericQuantity;
         private GradientButtonRadiusControl.GradientRadiusButton btnGoiYSanPham;
     }
 }

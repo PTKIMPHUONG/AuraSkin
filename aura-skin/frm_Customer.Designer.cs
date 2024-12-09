@@ -57,7 +57,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lblTitle.Location = new System.Drawing.Point(422, 28);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(387, 44);
+            this.lblTitle.Size = new System.Drawing.Size(504, 44);
             this.lblTitle.TabIndex = 85;
             this.lblTitle.Text = "Thêm Khách Hàng Mới";
             // 

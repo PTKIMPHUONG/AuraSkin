@@ -31,5 +31,9 @@ namespace aura_skin.BUS
             product.default_image = image;
             productsDAO.UpdateImageProduct(product);
         }
+        public void AddProduct(Product product)
+        {
+            productsDAO.AddProduct(product);
+        }
     }
 }

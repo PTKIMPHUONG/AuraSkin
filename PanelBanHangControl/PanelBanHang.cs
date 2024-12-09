@@ -23,8 +23,7 @@ namespace PanelBanHangControl
             //this.textBoxExt1.Size = new System.Drawing.Size(100, 22);
             //this.textBoxExt1.TabIndex = 6;
             //this.textBoxExt1.Text = "textBoxExt1";
-        Label titleTimSP, titleGioHang, titleThongTinDonHang, titleChiTietHoaDon;
-        TextBoxExt txtMaSP, txtTenSP, txtDonGia, txtSoLuong;
+
 
 
         public PanelBanHang()

@@ -32,7 +32,7 @@ namespace aura_skin
     {
         public string Username;
         //string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm" };
-        string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Nhân viên", "Khách hàng", "Nhà cung cấp", "Phiếu nhập", "Thống kê", "Đăng xuất" };
+        string[] getSt = { "Bán hàng", "Khuyến mãi", "Sản phẩm", "Hóa đơn", "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê", "Đăng xuất" };
         string[] getSt1 = { "Nhân viên", "Khách hàng", "Nhà cung cấp", "Thống kê" };
         string[] getStLogOut = { "Đăng xuất" };
 
@@ -50,11 +50,12 @@ namespace aura_skin
         ProductBUS productBUS = new ProductBUS();
         CategoriesBUS categoriesBUS = new CategoriesBUS();
         SuppliersBUS suppliersBUS = new SuppliersBUS();
+        UsersBUS usersBUS = new UsersBUS();
 
         List<Category> categories = new List<Category>();
         List<Supplier> suppliers = new List<Supplier>();
         List<Product> products = new List<Product>();
-
+        List<User> users = new List<User>();
         public frm_Main()
         {
             InitializeComponent();
@@ -76,6 +77,7 @@ namespace aura_skin
             products = productBUS.products;
             categories = categoriesBUS.categories;
             suppliers = suppliersBUS.suppliers;
+            users= usersBUS.users;
         }
 
         //Hover chuột ra ngoài sẽ hiển thị màu 64,64,64
@@ -139,7 +141,7 @@ namespace aura_skin
                 GradientRadiusButton btnMenu = new GradientRadiusButton();
                 btnMenu.Text = getSt[i];
                 btnMenu.Width = 317;
-                btnMenu.Height = 65;
+                btnMenu.Height = 75;
                 btnMenu.Cursor = Cursors.Hand;
 
                 // Set vị trí nút
@@ -287,6 +289,7 @@ namespace aura_skin
                         pnlNhanVien.TabIndex = 6;
                         pnl_main.Controls.Add(pnlNhanVien);
                         setupBtnTitle();
+                        addControlToNhanVienPanel();
                     }
                     break;
                 case "Khách hàng":
@@ -311,6 +314,7 @@ namespace aura_skin
                         pnlSupplier.TabIndex = 6;
                         pnl_main.Controls.Add(pnlSupplier);
                         setupBtnTitle();
+                        addControlsToSuppliersPanel();
                     }
                     break;
                 case "Phiếu nhập":
@@ -343,10 +347,99 @@ namespace aura_skin
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         private void addControlsToBanHangPanel()
         {
             pnlBanHang.ControlsDictionary["btnGoiYSanPham"].Click += btnGoiYSanPham_Click;
+            pnlBanHang.ControlsDictionary["btnTimKiem"].Click += btnTimKiemSP_Cart_Click;
+        }
+
+        private void btnTimKiemSP_Cart_Click(object sender, EventArgs e)
+        {
+            Product product = productBUS.GetProductByID(pnlBanHang.ControlsDictionary["txtMaSP"].Text.ToString());
+            pnlBanHang.ControlsDictionary["txtTenSP"].Text=product.product_name;
+            pnlBanHang.ControlsDictionary["txtPrice"].Text = product.default_price.ToString();
+            pnlBanHang.ControlsDictionary["txtDescription"].Text = product.description;
+            var numericQuantity = pnlBanHang.ControlsDictionary["numericQuantity"] as NumericUpDownExt;
+            numericQuantity.Maximum=product.stock_quantity;
+
+
+            if (product.default_image != null && product.default_image != "")
+            {
+                #region Thêm hình ảnh vào panel
+                // Tạo PictureBox và thêm vào Panel
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Dock = DockStyle.Fill;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                // Tải hình ảnh vào PictureBox
+                pictureBox.Image = Image.FromFile("../../../image/Product/" + product.default_image);
+
+                // Thêm PictureBox vào Panel
+                pnlBanHang.ControlsDictionary["pnlImageSP"].Controls.Add(pictureBox);
+                #endregion
+            }
+            else
+            {
+                //pnlSanPham.ControlsDictionary["pnlImageSP"].Refresh();
+            }
+        }
+
+        private void addControlToNhanVienPanel()
+        {
+            #region Load dữ liệu vào table Products
+            // Lấy SfDataGrid từ ControlsDictionary
+            var dtgDsNhanVien = pnlNhanVien.ControlsDictionary["dtgDsNhanVien"] as SfDataGrid;
+            if (dtgDsNhanVien != null)
+            {
+                dtgDsNhanVien.AutoGenerateColumns = false;
+                // Gán DataSource
+                dtgDsNhanVien.DataSource = users;
+            }
+            else
+            {
+                MessageBox.Show("Không thể load dữ liệu Products");
+            }
+            #endregion
+
+            #region Load dữ liệu vào combobox giới tính
+            // Tạo danh sách giới tính
+            var genders = new List<object>
+            {
+                new { Value = "Nam" },
+                new { Value = "Nữ" }
+            };
+
+            // Lấy ComboBox từ ControlsDictionary
+            var cboGender = pnlNhanVien.ControlsDictionary["cboGioiTinh"] as SfComboBox;
+
+            // Gán dữ liệu vào ComboBox
+            cboGender.DataSource = genders;
+            cboGender.DisplayMember = "Value";
+            cboGender.ValueMember = "Value";
+
+            // Gán giá trị mặc định là chưa chọn
+            cboGender.SelectedIndex = -1;
+            #endregion
+
+            dtgDsNhanVien.CurrentCellActivated += dtgNhanVien_CurrentCellActivated;
+        }
+        private void addControlsToSuppliersPanel()
+        {
+            #region Load dữ liệu vào table Products
+            // Lấy SfDataGrid từ ControlsDictionary
+            var dtgDsSuppliers = pnlSupplier.ControlsDictionary["dtgDsSuppliers"] as SfDataGrid;
+            if (dtgDsSuppliers != null)
+            {
+                dtgDsSuppliers.AutoGenerateColumns = false;
+                // Gán DataSource
+                dtgDsSuppliers.DataSource = suppliers;
+            }
+            else
+            {
+                MessageBox.Show("Không thể load dữ liệu Products");
+            }
+            #endregion
+            dtgDsSuppliers.CurrentCellActivated += dtgSuppliers_CurrentCellActivated;
         }
 
         private void addControlsToProductsPanel()
@@ -392,7 +485,7 @@ namespace aura_skin
 
             dtgProducts.CurrentCellActivated += dtgProducts_CurrentCellActivated;
         }
-        private void dtgProducts_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
+        private void dtgNhanVien_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
         {
             var sfDataGrid = sender as SfDataGrid;
             if (sfDataGrid != null && sfDataGrid.CurrentItem != null)
@@ -401,6 +494,82 @@ namespace aura_skin
                 var selectedRow = sfDataGrid.CurrentItem;
 
                 // Lấy giá trị của cột đầu tiên (MappingName phải khớp)
+                var firstCellValue = selectedRow.GetType().GetProperty(sfDataGrid.Columns[0].MappingName)?.GetValue(selectedRow, null);
+
+                if (firstCellValue != null)
+                {
+                    User user = new User();
+                    user = usersBUS.GetUserByID(firstCellValue.ToString());
+                    pnlNhanVien.ControlsDictionary["txtUserID"].Text = user.id_user;
+                    pnlNhanVien.ControlsDictionary["txtUsername"].Text = user.username;
+                    pnlNhanVien.ControlsDictionary["txtFullName"].Text = user.full_name;
+
+                    // Tìm Category có Id tương ứng 
+                    var cboGioiTinh = pnlNhanVien.ControlsDictionary["cboGioiTinh"] as SfComboBox;
+                    cboGioiTinh.SelectedValue = user.gender;
+
+                    pnlNhanVien.ControlsDictionary["txtEmail"].Text = user.email;
+                    pnlNhanVien.ControlsDictionary["txtSDT"].Text = user.phone_number;
+                    pnlNhanVien.ControlsDictionary["txtAddress"].Text = user.address;
+
+                    if (user.image_user != null && user.image_user!= "")
+                    {
+                        #region Thêm hình ảnh vào panel
+                        // Tạo PictureBox và thêm vào Panel
+                        PictureBox pictureBox = new PictureBox();
+                        pictureBox.Dock = DockStyle.Fill; 
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; 
+
+                        // Tải hình ảnh vào PictureBox
+                        pictureBox.Image = Image.FromFile("../../../image/User/" + user.image_user);
+
+                        // Thêm PictureBox vào Panel
+                        pnlNhanVien.ControlsDictionary["pnlImageUser"].Controls.Add(pictureBox);
+                        #endregion
+                    }
+                    else
+                    {
+                        //pnlSanPham.ControlsDictionary["pnlImageUser"].Refresh();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể lấy giá trị ô đầu tiên.");
+                }
+            }
+        }
+        private void dtgSuppliers_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
+        {
+            var sfDataGrid = sender as SfDataGrid;
+            if (sfDataGrid != null && sfDataGrid.CurrentItem != null)
+            {
+                // Lấy đối tượng của hàng hiện tại
+                var selectedRow = sfDataGrid.CurrentItem;
+
+                // Lấy giá trị của cột đầu tiên (mã)
+                var firstCellValue = selectedRow.GetType().GetProperty(sfDataGrid.Columns[0].MappingName)?.GetValue(selectedRow, null);
+
+                if (firstCellValue != null)
+                {
+                    Supplier supplier = new Supplier();
+                    supplier = suppliersBUS.GetSupplierByID(firstCellValue.ToString());
+                    pnlSupplier.ControlsDictionary["txtSupplierID"].Text = supplier.id_supplier;
+                    pnlSupplier.ControlsDictionary["txtSupplierName"].Text = supplier.supplier_name;
+                    pnlSupplier.ControlsDictionary["txtEmail"].Text = supplier.email;
+                    pnlSupplier.ControlsDictionary["txtPhoneNumber"].Text = supplier.phone_number;
+                    pnlSupplier.ControlsDictionary["txtAddress"].Text = supplier.address;
+                }
+            }
+        }
+        private void dtgProducts_CurrentCellActivated(object sender, CurrentCellActivatedEventArgs e)
+        {
+            var sfDataGrid = sender as SfDataGrid;
+            if (sfDataGrid != null && sfDataGrid.CurrentItem != null)
+            {
+                // Lấy đối tượng của hàng hiện tại
+                var selectedRow = sfDataGrid.CurrentItem;
+
+                // Lấy giá trị của cột đầu tiên
                 var firstCellValue = selectedRow.GetType().GetProperty(sfDataGrid.Columns[0].MappingName)?.GetValue(selectedRow, null);
 
                 if (firstCellValue != null)
@@ -426,11 +595,11 @@ namespace aura_skin
                         #region Thêm hình ảnh vào panel
                         // Tạo PictureBox và thêm vào Panel
                         PictureBox pictureBox = new PictureBox();
-                        pictureBox.Dock = DockStyle.Fill;  // Hoặc bạn có thể sử dụng các giá trị như Top, Left để định vị
-                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;  // Hoặc sử dụng các giá trị khác như CenterImage, Zoom, etc.
+                        pictureBox.Dock = DockStyle.Fill; 
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;  
 
                         // Tải hình ảnh vào PictureBox
-                        pictureBox.Image = Image.FromFile("../../../image/Product/" + product.default_image); // Đảm bảo đường dẫn đúng đến ảnh của bạn
+                        pictureBox.Image = Image.FromFile("../../../image/Product/" + product.default_image); 
 
                         // Thêm PictureBox vào Panel
                         pnlSanPham.ControlsDictionary["pnlImageSP"].Controls.Add(pictureBox);
@@ -438,7 +607,7 @@ namespace aura_skin
                     }
                     else
                     {
-                        pnlSanPham.ControlsDictionary["pnlImageSP"].Refresh();
+                        //pnlSanPham.ControlsDictionary["pnlImageSP"].Refresh();
                     }    
                 }
                 else
@@ -492,7 +661,7 @@ namespace aura_skin
                 //Load ảnh vào pnlImageProduct
                 PictureBox pictureBox = new PictureBox();
                 // Tải hình ảnh vào PictureBox
-                pictureBox.Image = Image.FromFile(targetFilePath); // Đảm bảo đường dẫn đúng đến ảnh của bạn
+                pictureBox.Image = Image.FromFile(targetFilePath);
                 // Thêm PictureBox vào Panel
                 pnlSanPham.ControlsDictionary["pnlImageSP"].Controls.Add(pictureBox);
 

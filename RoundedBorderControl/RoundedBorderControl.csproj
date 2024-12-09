@@ -100,9 +100,6 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\GradientButtonRadiusControl\GradientButtonRadiusControl.csproj">
       <Project>{0f05b640-d0e9-41fa-a546-05fa61dd5fed}</Project>
       <Name>GradientButtonRadiusControl</Name>
@@ -111,6 +108,9 @@
       <Project>{ce0d36b4-6432-441d-92e2-a23dcdf3981c}</Project>
       <Name>GradientPanelRadiusControl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
